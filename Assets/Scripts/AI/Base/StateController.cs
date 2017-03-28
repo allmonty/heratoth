@@ -10,11 +10,12 @@ public class StateController : MonoBehaviour {
     // public EnemyStats enemyStats;
     public Transform eyes;
     public State remainState;
+    public List<Transform> wayPointList;
 
 
     [HideInInspector] public NavMeshAgent navMeshAgent;
     // [HideInInspector] public Complete.TankShooting tankShooting;
-    [HideInInspector] public List<Transform> wayPointList;
+    // [HideInInspector] public List<Transform> wayPointList;
     [HideInInspector] public int nextWayPoint;
     [HideInInspector] public Transform chaseTarget;
     [HideInInspector] public float stateTimeElapsed;
@@ -26,6 +27,7 @@ public class StateController : MonoBehaviour {
     {
         // tankShooting = GetComponent<Complete.TankShooting> ();
         navMeshAgent = GetComponent<NavMeshAgent> ();
+        SetupAI(true, wayPointList);
     }
 
     public void SetupAI(bool aiActivationFromTankManager, List<Transform> wayPointsFromTankManager)
