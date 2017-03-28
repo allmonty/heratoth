@@ -25,7 +25,7 @@ public class StateController : MonoBehaviour {
     void Awake () 
     {
         // tankShooting = GetComponent<Complete.TankShooting> ();
-        // navMeshAgent = GetComponent<NavMeshAgent> ();
+        navMeshAgent = GetComponent<NavMeshAgent> ();
     }
 
     public void SetupAI(bool aiActivationFromTankManager, List<Transform> wayPointsFromTankManager)
