@@ -3,10 +3,8 @@
 [CreateAssetMenu (menuName = "AI/State")]
 public class State : ScriptableObject 
 {
-
     public Action[] actions;
     public Transition[] transitions;
-    public Color sceneGizmoColor = Color.grey;
 
     public void UpdateState(StateController controller)
     {
@@ -16,8 +14,9 @@ public class State : ScriptableObject
 
     private void DoActions(StateController controller)
     {
-        for (int i = 0; i < actions.Length; i++) {
-            actions [i].Act (controller);
+        for (int i = 0; i < actions.Length; i++)
+        {
+            actions[i].Act(controller);
         }
     }
 
@@ -25,16 +24,15 @@ public class State : ScriptableObject
     {
         for (int i = 0; i < transitions.Length; i++) 
         {
-            bool decisionSucceeded = transitions [i].decision.Decide (controller);
+            bool decisionSucceeded = transitions[i].decision.Decide(controller);
 
-            if (decisionSucceeded) {
-                controller.TransitionToState (transitions [i].trueState);
+            if (decisionSucceeded)
+            {
+                controller.TransitionToState(transitions[i].trueState);
             } else 
             {
-                controller.TransitionToState (transitions [i].falseState);
+                controller.TransitionToState(transitions[i].falseState);
             }
         }
     }
-
-
 }

@@ -276,14 +276,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4674be9e01904438b90ffc7282a8e409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: c9c52cdfff39344379a6f58cd989bc62, type: 2}
+  currentState: {fileID: 11400000, guid: 56e77cded47b2974181a9feaed4c4196, type: 2}
+  navMeshAgent: {fileID: 0}
   eyes: {fileID: 0}
   remainState: {fileID: 0}
   wayPointList:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  navMeshAgent: {fileID: 0}
   nextWayPoint: 0
   chaseTarget: {fileID: 0}
   stateTimeElapsed: 0
@@ -317,6 +317,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

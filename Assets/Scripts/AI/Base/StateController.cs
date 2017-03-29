@@ -1,81 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
-// using Complete;
 
-public class StateController : MonoBehaviour {
+public abstract class StateController : MonoBehaviour
+{
+	public State currentState;
 
-    public State currentState;
-    // public EnemyStats enemyStats;
-    public Transform eyes;
-    public State remainState;
-    public List<Transform> wayPointList;
+	[HideInInspector] public NavMeshAgent navMeshAgent;
 
+	protected virtual void Awake()
+	{
+		navMeshAgent = GetComponent<NavMeshAgent>();
+	}
 
-    [HideInInspector] public NavMeshAgent navMeshAgent;
-    // [HideInInspector] public Complete.TankShooting tankShooting;
-    // [HideInInspector] public List<Transform> wayPointList;
-    [HideInInspector] public int nextWayPoint;
-    [HideInInspector] public Transform chaseTarget;
-    [HideInInspector] public float stateTimeElapsed;
+	protected virtual void Update()
+	{
+		currentState.UpdateState(this);
+	}
 
-    private bool aiActive;
+	public virtual void TransitionToState(State nextState)
+	{
+		if (nextState != currentState)
+		{
+			currentState = nextState;
+			OnExitState();
+		}
+	}
 
-
-    void Awake () 
-    {
-        // tankShooting = GetComponent<Complete.TankShooting> ();
-        navMeshAgent = GetComponent<NavMeshAgent> ();
-        SetupAI(true, wayPointList);
-    }
-
-    public void SetupAI(bool aiActivationFromTankManager, List<Transform> wayPointsFromTankManager)
-    {
-        wayPointList = wayPointsFromTankManager;
-        aiActive = aiActivationFromTankManager;
-        if (aiActive) 
-        {
-            navMeshAgent.enabled = true;
-        } else 
-        {
-            navMeshAgent.enabled = false;
-        }
-    }
-
-    void Update()
-    {
-        if (!aiActive)
-            return;
-        currentState.UpdateState (this);
-    }
-
-    void OnDrawGizmos()
-    {
-        if (currentState != null && eyes != null) 
-        {
-            Gizmos.color = currentState.sceneGizmoColor;
-            // Gizmos.DrawWireSphere (eyes.position, enemyStats.lookSphereCastRadius);
-        }
-    }
-
-    public void TransitionToState(State nextState)
-    {
-        if (nextState != remainState) 
-        {
-            currentState = nextState;
-            OnExitState ();
-        }
-    }
-
-    public bool CheckIfCountDownElapsed(float duration)
-    {
-        stateTimeElapsed += Time.deltaTime;
-        return (stateTimeElapsed >= duration);
-    }
-
-    private void OnExitState()
-    {
-        stateTimeElapsed = 0;
-    }
+	protected virtual void OnExitState() {/*Reset the states attribute here*/}
 }

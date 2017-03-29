@@ -1,16 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu (menuName = "AI/Actions/Patrol")]
-public class PatrolAction : Action
+[CreateAssetMenu (menuName = "AI/Actions/Enemy_Patrol")]
+public class Patrol_Action : Action
 {
-    public override void Act(StateController controller)
-    {
-        Patrol (controller);
+	public override void Act(StateController controller)
+	{
+		Act(controller as Enemy_StateController);
     }
 
-    private void Patrol(StateController controller)
+	public void Act(Enemy_StateController controller)
+    {
+        Patrol(controller);
+    }
+
+    private void Patrol(Enemy_StateController controller)
     {
         controller.navMeshAgent.destination = controller.wayPointList [controller.nextWayPoint].position;
         controller.navMeshAgent.Resume ();
