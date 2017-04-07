@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Name: Enemy_TargetSpotDecision
   m_EditorClassIdentifier: 
   lookRange: 10
-  sphereRadius: 5
   targetTag: Player
