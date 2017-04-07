@@ -38,6 +38,15 @@ public class Enemy_StateController : StateController
 		base.Update();
     }
 
+    void OnDrawGizmos()
+    {
+        if (currentState != null && eyes != null) 
+        {
+            Gizmos.color = currentState.sceneGizmoColor;
+            Gizmos.DrawWireSphere (eyes.position, 0.5f);
+        }
+    }
+
     public bool CheckIfCountDownElapsed(float duration)
     {
         stateTimeElapsed += Time.deltaTime;
