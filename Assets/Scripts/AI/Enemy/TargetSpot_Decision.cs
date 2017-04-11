@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Decisions/TargetSpot")]
 public class TargetSpot_Decision : Decision {
@@ -22,11 +20,9 @@ public class TargetSpot_Decision : Decision {
 		Vector3 direction = control.eyes.forward;
 
 		if( Physics.Raycast(origin, direction, out hit) && hit.collider.CompareTag("Player") ) {
-			Debug.Log(targetTag + " SPOTTED");
 			return true;
 		}
 		else {
-			Debug.Log("Searching for " + targetTag);
 			return false;
 		}
 	}
