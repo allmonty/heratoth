@@ -465,20 +465,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 4142244391192268, guid: 11d73cc89d156224c9c0d42197d49918, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54724340145426160, guid: 11d73cc89d156224c9c0d42197d49918,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 114178913259180088, guid: 11d73cc89d156224c9c0d42197d49918,
-        type: 2}
-      propertyPath: movementController.speed
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11d73cc89d156224c9c0d42197d49918, type: 2}
   m_IsPrefabParent: 0
