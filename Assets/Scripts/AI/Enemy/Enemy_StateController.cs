@@ -6,6 +6,7 @@ public class Enemy_StateController : StateController
     public Transform eyes;
     public List<Transform> wayPointList;
     public Transform chaseTarget;
+    public StaminaSystem stamina;
 
     [HideInInspector] public int nextWayPoint;
     [HideInInspector] public float stateTimeElapsed;
