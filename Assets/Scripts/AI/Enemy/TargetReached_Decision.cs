@@ -3,7 +3,6 @@
 [CreateAssetMenu (menuName = "AI/Decisions/TargetReached")]
 public class TargetReached_Decision : Decision {
 
-	public GameObject target;
 	public bool overrideDistanceToReach;
 	public float distanceToReach;
 	
@@ -13,8 +12,8 @@ public class TargetReached_Decision : Decision {
 
 	private bool isTargetReached(StateController controller) {
 		var enemyControl = controller as Enemy_StateController;
-		Debug.Log("remainingDistance: " + enemyControl.navMeshAgent.remainingDistance);
 		
+		enemyControl.navMeshAgent.destination = enemyControl.chaseTarget.position;		
 
 		if(!overrideDistanceToReach)
 			distanceToReach = enemyControl.navMeshAgent.stoppingDistance;
