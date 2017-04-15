@@ -70,12 +70,13 @@ namespace UnityTest
         {
         }
 
-        [Test]
-        [ExpectedException(typeof(ArgumentException), ExpectedMessage = "expected message")]
-        public void ExpectedExceptionTest()
-        {
-            throw new ArgumentException("expected message");
-        }
+        // NÃO FUNCIONA NA UNITY 5.6
+        // [Test]
+        // [ExpectedException(typeof(ArgumentException), ExpectedMessage = "expected message")]
+        // public void ExpectedExceptionTest()
+        // {
+        //     throw new ArgumentException("expected message");
+        // }
 
         [Datapoint]
         public double zero = 0;
