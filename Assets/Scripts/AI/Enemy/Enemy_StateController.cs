@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Enemy_StateController : StateController
 {
@@ -12,11 +13,15 @@ public class Enemy_StateController : StateController
     [HideInInspector] public float stateTimeElapsed;
 
     private bool aiActive;
-	
+
+    public SerializableDictionary properties;
+
 	override protected void Awake () 
     {
 		base.Awake();
         SetupAI(true, wayPointList);
+
+        wayPointList.Where(obj => obj.name == "teste").SingleOrDefault();
     }
 
     public void SetupAI(bool aiActivationFromTankManager, List<Transform> wayPointsFromTankManager)

@@ -196,6 +196,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23468302791334938
 MeshRenderer:
@@ -227,6 +228,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23471338005198614
 MeshRenderer:
@@ -258,6 +260,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33463918081878894
 MeshFilter:
@@ -317,6 +320,7 @@ MonoBehaviour:
   stamina: {fileID: 114671784733020518}
   nextWayPoint: 2
   stateTimeElapsed: 0
+  properties: {fileID: 11400000, guid: 5ee63232929a1f1479a0c45795ede847, type: 2}
 --- !u!114 &114671784733020518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,6 +353,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1163873332713302}
   m_Enabled: 1
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 2.5
   m_Acceleration: 8
