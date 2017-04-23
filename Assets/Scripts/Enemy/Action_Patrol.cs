@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Actions/Enemy_Patrol")]
-public class Patrol_Action : Action
+public class Action_Patrol : Action
 {
 	public override void Act(StateController controller)
 	{
