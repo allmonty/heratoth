@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Decisions/TargetReached")]
-public class TargetReached_Decision : Decision {
+public class Decision_OnTargetReached : Decision {
 
 	public bool overrideDistanceToReach;
 	public float distanceToReach;

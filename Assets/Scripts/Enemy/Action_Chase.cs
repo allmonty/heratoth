@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Actions/Chase")]
-public class Chase_Action : Action {
+public class Action_Chase : Action {
 
 	public override void Act(StateController controller) {
-		Chase(controller);
+		chase(controller);
 	}
 
-	private void Chase(StateController controller) {
+	private void chase(StateController controller) {
 		var enemyControl = controller as Enemy_StateController;
 
 		enemyControl.navMeshAgent.destination = enemyControl.chaseTarget.position;
-		enemyControl.navMeshAgent.Resume();
+		enemyControl.navMeshAgent.isStopped = false;
 	}
 }

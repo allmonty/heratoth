@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Actions/Enemy_Patrol")]
-public class Patrol_Action : Action
+public class Action_Patrol : Action
 {
 	public override void Act(StateController controller)
 	{
@@ -15,12 +15,12 @@ public class Patrol_Action : Action
 
     private void Patrol(Enemy_StateController controller)
     {
-        controller.navMeshAgent.destination = controller.wayPointList [controller.nextWayPoint].position;
+        controller.navMeshAgent.destination = controller.movementVariables.wayPointList [controller.movementVariables.nextWayPoint].position;
         controller.navMeshAgent.Resume ();
 
         if (controller.navMeshAgent.remainingDistance <= controller.navMeshAgent.stoppingDistance && !controller.navMeshAgent.pathPending) 
         {
-            controller.nextWayPoint = (controller.nextWayPoint + 1) % controller.wayPointList.Count;
+            controller.movementVariables.nextWayPoint = (controller.movementVariables.nextWayPoint + 1) % controller.movementVariables.wayPointList.Count;
         }
     }
 }

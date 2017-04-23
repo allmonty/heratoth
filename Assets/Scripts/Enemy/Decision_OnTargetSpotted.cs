@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Decisions/TargetSpot")]
-public class TargetSpot_Decision : Decision {
+public class Decision_OnTargetSpotted : Decision {
 	
 	[SerializeField] float lookRange;
 	[SerializeField] string targetTag;
