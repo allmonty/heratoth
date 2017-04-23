@@ -310,7 +310,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamina:
-    stamina: 10
+    maxStamina: 6
+    stamina: 6
+    secondsToRegen: 3
+    regenRatePerSecond: 2
 --- !u!114 &114987721021276006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,7 +331,6 @@ MonoBehaviour:
   eyes: {fileID: 4374490996439820}
   chaseTarget: {fileID: 0}
   movementVariables:
-    teste: 2
     wayPointList:
     - {fileID: 0}
     - {fileID: 0}

@@ -2,7 +2,7 @@
 
 [CreateAssetMenu (menuName = "AI/Actions/Enemy_Attack")]
 public class Action_Attack : Action {
-	[SerializeField] int staminaRequired = 2;
+	[SerializeField] float staminaRequired = 2f;
 	[SerializeField] float attackDelay = 5f;
 	
 	float timer = 0f;

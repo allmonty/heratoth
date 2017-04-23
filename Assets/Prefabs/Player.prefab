@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 136407659936706404}
   - component: {fileID: 114464580638546868}
   - component: {fileID: 114178913259180088}
+  - component: {fileID: 114994416702935020}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -293,6 +294,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 114178913259180088}
+--- !u!114 &114994416702935020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901760253170010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b201634dcf46b046a9b90661cedf787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stamina:
+    maxStamina: 10
+    stamina: 10
+    secondsToRegen: 3
+    regenRatePerSecond: 1
+    teste: 0
 --- !u!136 &136407659936706404
 CapsuleCollider:
   m_ObjectHideFlags: 1
