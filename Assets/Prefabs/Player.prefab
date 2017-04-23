@@ -305,12 +305,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b201634dcf46b046a9b90661cedf787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life:
+    maxLife: 5
+    life: 5
   stamina:
     maxStamina: 10
     stamina: 10
     secondsToRegen: 3
     regenRatePerSecond: 1
-    teste: 0
 --- !u!136 &136407659936706404
 CapsuleCollider:
   m_ObjectHideFlags: 1
