@@ -33,11 +33,9 @@ public class Status_Stamina {
 	}
 
 	public void decrease(float amount) {
-		stamina -= amount;
-		timerToRegen = secondsToRegen;
-
-		if(stamina <= 0) {
-            Debug.Log("OUT OF STAMINA");
+		if(stamina > 0) {
+			stamina -= amount;
+			timerToRegen = secondsToRegen;
 		}
 	}
 
