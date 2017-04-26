@@ -13,4 +13,8 @@ public class Action_Chase : Action {
 		enemyControl.navMeshAgent.destination = enemyControl.chaseTarget.position;
 		enemyControl.navMeshAgent.isStopped = false;
 	}
+
+	public override void Init() {
+		return;
+	}
 }

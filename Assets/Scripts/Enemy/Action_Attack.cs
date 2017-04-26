@@ -5,7 +5,11 @@ public class Action_Attack : Action {
 	[SerializeField] float staminaRequired = 2f;
 	[SerializeField] float attackDelay = 5f;
 	
-	float timer = 0f;
+	float timer;
+
+	public override void Init() {
+		timer = attackDelay;
+	}
 	
 	public override void Act(StateController controller) {
 		attack(controller as Enemy_StateController); // Check
