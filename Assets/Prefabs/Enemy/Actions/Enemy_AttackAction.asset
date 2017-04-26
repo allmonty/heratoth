@@ -11,5 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d182f70b17fda4c0a9da5a9535fee178, type: 3}
   m_Name: Enemy_AttackAction
   m_EditorClassIdentifier: 
-  attackDelay: 5
-  timer: 0
+  staminaRequired: 1.5
+  attackDelay: 2
+  attackDuration: 1
+  attackDamage: 1
