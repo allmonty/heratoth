@@ -395,11 +395,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e082e91c9142949a4922bda9891d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackController:
+  atkCont:
     charStats: {fileID: 114994416702935020}
     damage: 2
     staminaCost: 2
     attackDuration: 0.5
+    isAttacking: 0
   attackBox: {fileID: 1774489025290226}
 --- !u!114 &114967160952844980
 MonoBehaviour:
