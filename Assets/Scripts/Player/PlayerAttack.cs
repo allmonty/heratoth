@@ -8,19 +8,33 @@ public class PlayerAttack : MonoBehaviour {
 	[SerializeField] PlayerAttackStatus heavyAttackStats;
 
 	PlayerAttackStatus currentAtkStats = null;
-
+	Animator anim = null;
+	int attackAnimVal = 0;
 	bool isAttacking = false;
+
+	void Start()
+	{
+		anim = GetComponentInChildren<Animator>();
+	}
 
 	public void lightAttack()
 	{
-		currentAtkStats = lightAttackStats;
-		if(canAttack()) startAttack();
+		if(canAttack(lightAttackStats.staminaCost))
+		{
+			currentAtkStats = lightAttackStats;
+			attackAnimVal = 1;
+			startAttack();
+		}
 	}
-	
+
 	public void heavyAttack()
 	{
-		currentAtkStats = heavyAttackStats;
-		if(canAttack()) startAttack();
+		if(canAttack(heavyAttackStats.staminaCost))
+		{
+			currentAtkStats = heavyAttackStats;
+			attackAnimVal = 2;
+			startAttack();
+		}
 	}
 
 	public void doDamage(CharacterStatus enemy)
@@ -31,23 +45,27 @@ public class PlayerAttack : MonoBehaviour {
 
 	private void startAttack()
 	{
-		if(!isAttacking)
-		{
-			attackBox.SetActive(true);
-			isAttacking = true;
-			charStats.stamina.decrease(currentAtkStats.staminaCost);
-			Invoke("endAttack", currentAtkStats.attackDuration);
-		}
+		anim.SetInteger("attack", attackAnimVal);
+		isAttacking = true;
+		charStats.stamina.decrease(currentAtkStats.staminaCost);
+		Invoke("activateAttack", currentAtkStats.attackDelay);
+	}
+
+	private void activateAttack()
+	{
+		attackBox.SetActive(true);
+		Invoke("endAttack", currentAtkStats.attackDuration);
 	}
 
 	private void endAttack()
 	{
+		anim.SetInteger("attack", 0);
 		attackBox.SetActive(false);
 		isAttacking = false;
 	}
 
-	private bool canAttack()
+	private bool canAttack(float staminaCost)
 	{
-		return charStats.stamina.isEnough(currentAtkStats.staminaCost) && !isAttacking;
+		return charStats.stamina.isEnough(staminaCost) && !isAttacking;
 	}
 }

@@ -27,13 +27,7 @@ public class PlayerInputReader : MonoBehaviour {
         inputHorizontal = Input.GetAxis(inputStrings.horizontalAxis);
         inputVertical = Input.GetAxis(inputStrings.verticalAxis);
 
-        if(inputHorizontal != 0.0f || inputVertical != 0.0f)
-        {
-            Vector3 moveDirection = processDirectionInRelationToCamera(inputHorizontal, 0.0f, inputVertical);
-            if(moveDirection.magnitude > 1) moveDirection.Normalize();
-
-            playerMovement.moveHorizontal(moveDirection.x, moveDirection.z);
-        }
+        playerMovement.move(inputHorizontal, inputVertical);
 
         //PROCESS ATTACK
         inputLightAttack = Input.GetButtonDown(inputStrings.lightAttackButton);
@@ -41,16 +35,5 @@ public class PlayerInputReader : MonoBehaviour {
 
         if(inputLightAttack){ playerAttack.lightAttack(); }
         if(inputHeavyAttack){ playerAttack.heavyAttack(); }
-    }
-
-    private Vector3 processDirectionInRelationToCamera(float x, float y, float z)
-    {
-        Vector3 direction = new Vector3(x, y, z);
-        Quaternion cameraRotation = Camera.main.transform.rotation;
-
-        cameraRotation.x = 0.0f; //removes the vertical rotation
-
-        direction = cameraRotation * direction;
-        return direction;
     }
 }
