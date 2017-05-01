@@ -6,6 +6,7 @@ public class PlayerInputStrings {
 	public string horizontalAxis = "Horizontal";
 	public string verticalAxis = "Vertical";
 	public string lightAttackButton = "Fire1";
+	public string heavyAttackButton = "Fire2";
 }
 
 public class PlayerInputReader : MonoBehaviour {
@@ -19,7 +20,7 @@ public class PlayerInputReader : MonoBehaviour {
     float inputVertical = 0.0f;
 
     bool inputLightAttack = false;
-    //bool inputHeavyAttack = false;
+    bool inputHeavyAttack = false;
 
 	void Update () {
         //PROCESS MOVEMENT
@@ -36,11 +37,10 @@ public class PlayerInputReader : MonoBehaviour {
 
         //PROCESS ATTACK
         inputLightAttack = Input.GetButtonDown(inputStrings.lightAttackButton);
+        inputHeavyAttack = Input.GetButtonDown(inputStrings.heavyAttackButton);
 
-        if(inputLightAttack)
-        {
-            playerAttack.attack();
-        }
+        if(inputLightAttack){ playerAttack.lightAttack(); }
+        if(inputHeavyAttack){ playerAttack.heavyAttack(); }
     }
 
     private Vector3 processDirectionInRelationToCamera(float x, float y, float z)

@@ -384,6 +384,7 @@ MonoBehaviour:
     horizontalAxis: Horizontal
     verticalAxis: Vertical
     lightAttackButton: Fire1
+    heavyAttackButton: Fire2
 --- !u!114 &114771041545600178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -395,13 +396,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e082e91c9142949a4922bda9891d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkCont:
-    charStats: {fileID: 114994416702935020}
+  charStats: {fileID: 114994416702935020}
+  attackBox: {fileID: 1774489025290226}
+  lightAttackStats:
     damage: 2
     staminaCost: 2
     attackDuration: 0.5
-    isAttacking: 0
-  attackBox: {fileID: 1774489025290226}
+  heavyAttackStats:
+    damage: 4
+    staminaCost: 5
+    attackDuration: 1
 --- !u!114 &114967160952844980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,6 +433,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: AttackBox+CallBack, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  layerToHit: Enemy
 --- !u!114 &114994416702935020
 MonoBehaviour:
   m_ObjectHideFlags: 1
