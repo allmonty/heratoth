@@ -3,11 +3,12 @@
 [CreateAssetMenu (menuName = "AI/Actions/Enemy_Attack")]
 public class Action_Attack : Action {
 	[SerializeField] float staminaRequired = 2f;
-	[SerializeField] float attackDelay = 1f;
-	[SerializeField] float attackDuration = 1f;
-	[SerializeField] float attackDamage = 1f;
-	
-	float timer;
+	[SerializeField] float attackDelay     = 1f;
+	[SerializeField] float attackDuration  = 1f;
+	[SerializeField] float attackDamage    = 1f;
+	[SerializeField] float attackRange     = 2f;
+
+	[SerializeField] float timer;
 
 	public override void Init() {
 		timer = attackDelay;
@@ -18,12 +19,18 @@ public class Action_Attack : Action {
 	}
 
 	private void attackRoutine(Enemy_StateController controller) {
+		Vector3 targetPosition = controller.chaseTarget.transform.position;
+		float distanceFromTarget = getDistanceFromTarget(targetPosition, controller);
+
 		bool hasStamina = controller.characterStatus.stamina.isEnough(staminaRequired);
 
 		if(hasStamina) {
 			if(timer >= attackDelay) {
-				performAttack(controller, attackDamage, attackDuration);
-				timer = 0f;				
+				timer = attackDelay;
+				if(distanceFromTarget <= attackRange) {
+					performAttack(controller, attackDamage, attackDuration);
+					timer = 0f;
+				}
 			} else {
 				timer += Time.deltaTime;
 			}
@@ -37,5 +44,13 @@ public class Action_Attack : Action {
 		controller.attackHandler.duration = attackDuration;
 		controller.attackHandler.hitBox.enabled = true;
 		controller.characterStatus.stamina.decrease(staminaRequired);
+	}
+
+	private float getDistanceFromTarget(Vector3 targetPosition, Enemy_StateController controller) {
+		Vector3 originPosition = controller.eyes.position;
+		Vector3 originToTargetVector = targetPosition - originPosition;
+		float distanceFromTarget = originToTargetVector.magnitude;
+		
+		return distanceFromTarget;
 	}
 }
