@@ -9,7 +9,7 @@ public class State : ScriptableObject
 
     public void Init() {
         foreach(Action action in actions) {
-            action.Init();
+            // action.Init();
         }
     }
 
