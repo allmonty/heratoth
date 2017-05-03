@@ -14,11 +14,9 @@ public class Decision_LowOnStamina : Decision {
 
 		var characterStamina = enemyController.characterStatus.stamina;
 		if( characterStamina.stamina <= lowStamina ) {
-			Debug.Log("IS LOW ON STAMINA");
 			return true;
 		}
 
-		Debug.Log("STAMINA OK");
 		return false;
 	}
 }
