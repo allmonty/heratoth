@@ -8,7 +8,7 @@ public class Action_Attack : Action {
 	[SerializeField] float attackDamage    = 1f;
 	[SerializeField] float attackRange     = 2f;
 
-	[SerializeField] float timer;
+	float timer;
 
 	public override void Init() {
 		timer = attackDelay;
