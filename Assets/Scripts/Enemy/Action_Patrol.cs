@@ -23,4 +23,8 @@ public class Action_Patrol : Action
             controller.movementVariables.nextWayPoint = (controller.movementVariables.nextWayPoint + 1) % controller.movementVariables.wayPointList.Count;
         }
     }
+    
+    public override void Init() {
+        return;
+    }
 }

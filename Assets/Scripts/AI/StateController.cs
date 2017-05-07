@@ -22,6 +22,7 @@ public abstract class StateController : MonoBehaviour
 		if (nextState != currentState)
 		{
 			currentState = nextState;
+			currentState.Init();
 			OnExitState();
 		}
 	}

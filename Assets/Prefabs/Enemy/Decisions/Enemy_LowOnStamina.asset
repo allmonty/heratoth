@@ -8,8 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d182f70b17fda4c0a9da5a9535fee178, type: 3}
-  m_Name: Enemy_AttackAction
+  m_Script: {fileID: 11500000, guid: fae7f922cd01248a092a03422ce87fa4, type: 3}
+  m_Name: Enemy_LowOnStamina
   m_EditorClassIdentifier: 
-  attackDelay: 5
-  timer: 0
+  lowStamina: 2
