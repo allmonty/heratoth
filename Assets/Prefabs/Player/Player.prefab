@@ -2235,8 +2235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1e9ec10a5ce7f4caaeee9e23365767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementController:
-    speed: 5
+  charStats: {fileID: 114994416702935020}
+  speed: 5
+  dodgeSpeed: 20
+  dodgeDuration: 0.2
 --- !u!114 &114464580638546868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2255,6 +2257,7 @@ MonoBehaviour:
     verticalAxis: Vertical
     lightAttackButton: Fire1
     heavyAttackButton: Fire2
+    dodgeButton: Fire3
 --- !u!114 &114771041545600178
 MonoBehaviour:
   m_ObjectHideFlags: 1
