@@ -3,6 +3,11 @@
 [CreateAssetMenu (menuName = "AI/Actions/Chase")]
 public class Action_Chase : Action {
 
+	public override void Init(StateController controller) {
+		var control = controller as Enemy_StateController;
+        control.anim.SetTrigger("ChaseState");
+	}
+
 	public override void Act(StateController controller) {
 		chase(controller);
 	}
@@ -12,9 +17,5 @@ public class Action_Chase : Action {
 
 		enemyControl.navMeshAgent.destination = enemyControl.chaseTarget.position;
 		enemyControl.navMeshAgent.isStopped = false;
-	}
-
-	public override void Init() {
-		return;
 	}
 }

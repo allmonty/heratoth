@@ -10,8 +10,9 @@ public class Action_Attack : Action {
 
 	float timer;
 
-	public override void Init() {
-		timer = attackDelay;
+	public override void Init(StateController controller) {
+		// timer = attackDelay;
+		return;
 	}
 	
 	public override void Act(StateController controller) {		

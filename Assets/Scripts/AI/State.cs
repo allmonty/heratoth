@@ -7,9 +7,9 @@ public class State : ScriptableObject
     public Transition[] transitions;
     public Color sceneGizmoColor = Color.gray;
 
-    public void Init() {
+    public void Init(StateController controller) {
         foreach(Action action in actions) {
-            // action.Init();
+            action.Init(controller);
         }
     }
 

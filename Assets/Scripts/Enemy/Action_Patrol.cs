@@ -3,6 +3,11 @@
 [CreateAssetMenu (menuName = "AI/Actions/Enemy_Patrol")]
 public class Action_Patrol : Action
 {
+    public override void Init(StateController controller) {
+        var control = controller as Enemy_StateController;
+        control.anim.SetTrigger("PatrolState");
+    }
+
 	public override void Act(StateController controller)
 	{
 		Act(controller as Enemy_StateController);
@@ -22,9 +27,5 @@ public class Action_Patrol : Action
         {
             controller.movementVariables.nextWayPoint = (controller.movementVariables.nextWayPoint + 1) % controller.movementVariables.wayPointList.Count;
         }
-    }
-    
-    public override void Init() {
-        return;
     }
 }
