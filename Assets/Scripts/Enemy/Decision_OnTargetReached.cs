@@ -19,10 +19,8 @@ public class Decision_OnTargetReached : Decision {
 			distanceToReach = enemyControl.navMeshAgent.stoppingDistance;
 
 		if(enemyControl.navMeshAgent.remainingDistance <= distanceToReach && !enemyControl.navMeshAgent.pathPending) {
-			enemyControl.navMeshAgent.isStopped = true;
 			return true;
 		} else {
-			enemyControl.navMeshAgent.isStopped = false;
 			return false;
 		}
 	}
