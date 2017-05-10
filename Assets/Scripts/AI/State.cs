@@ -35,10 +35,12 @@ public class State : ScriptableObject
 
             if (decisionSucceeded)
             {
-                controller.TransitionToState(transitions[i].trueState);
+                if(transitions[i].trueState != controller.currentState && transitions[i].trueState != null)
+                    controller.TransitionToState(transitions[i].trueState);
             } else 
             {
-                controller.TransitionToState(transitions[i].falseState);
+                if(transitions[i].trueState != controller.currentState && transitions[i].falseState != null)
+                    controller.TransitionToState(transitions[i].falseState);
             }
         }
     }
