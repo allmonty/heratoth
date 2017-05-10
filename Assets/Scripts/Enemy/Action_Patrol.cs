@@ -4,8 +4,7 @@
 public class Action_Patrol : Action
 {
     public override void Init(StateController controller) {
-        var control = controller as Enemy_StateController;
-        control.anim.SetTrigger("PatrolState");
+        Debug.Log("PATROL STATE");
     }
 
 	public override void Act(StateController controller)
@@ -20,6 +19,7 @@ public class Action_Patrol : Action
 
     private void Patrol(Enemy_StateController controller)
     {
+        controller.anim.SetTrigger("PatrolState");
         controller.navMeshAgent.destination = controller.movementVariables.wayPointList [controller.movementVariables.nextWayPoint].position;
         controller.navMeshAgent.isStopped = false;
 
