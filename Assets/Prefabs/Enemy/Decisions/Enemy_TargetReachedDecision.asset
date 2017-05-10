@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Enemy_TargetReachedDecision
   m_EditorClassIdentifier: 
   overrideDistanceToReach: 1
-  distanceToReach: 2
+  distanceToReach: 2.5
