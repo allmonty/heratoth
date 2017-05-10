@@ -11,7 +11,7 @@ public class Action_Attack : Action {
 	float timer;
 
 	public override void Init(StateController controller) {
-		// timer = attackDelay;
+		Debug.Log("ATTACK STATAE");
 		return;
 	}
 	
@@ -22,16 +22,14 @@ public class Action_Attack : Action {
 	private void attackRoutine(Enemy_StateController controller) {
 		Vector3 targetPosition = controller.chaseTarget.transform.position;
 		float distanceFromTarget = getDistanceFromTarget(targetPosition, controller);
-
 		bool hasStamina = controller.characterStatus.stamina.isEnough(staminaRequired);
 
 		if(hasStamina) {
 			if(timer >= attackDelay) {
 				timer = attackDelay;
-				if(distanceFromTarget <= attackRange) {
-					performAttack(controller, attackDamage, attackDuration);
-					timer = 0f;
-				}
+				controller.characterStatus.stamina.decrease(staminaRequired);
+				performAttack(controller, attackDamage, attackDuration);
+				timer = 0f;
 			} else {
 				timer += Time.deltaTime;
 			}
@@ -41,10 +39,10 @@ public class Action_Attack : Action {
 	}
 
 	private void performAttack(Enemy_StateController controller, float attackDamage, float attackDuration) {
+		controller.anim.SetTrigger("AttackState");
 		controller.attackHandler.damage = attackDamage;
 		controller.attackHandler.duration = attackDuration;
 		controller.attackHandler.hitBox.enabled = true;
-		controller.characterStatus.stamina.decrease(staminaRequired);
 	}
 
 	private float getDistanceFromTarget(Vector3 targetPosition, Enemy_StateController controller) {
