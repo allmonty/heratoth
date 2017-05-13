@@ -32,6 +32,13 @@ public class Status_Stamina {
 		return false;
 	}
 
+	public bool isFull() {
+		if(stamina == maxStamina){
+			return true;
+		}
+		return false;
+	}
+
 	public void decrease(float amount) {
 		if(stamina > 0) {
 			stamina -= amount;
