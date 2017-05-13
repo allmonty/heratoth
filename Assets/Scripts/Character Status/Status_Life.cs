@@ -1,11 +1,14 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [Serializable]
 public class Status_Life {
 
 	public float maxLife = 10f;
 	public float life = 10f;
+
+	public UnityEvent callOnDeath;
 
 	public void init() {
 		life = maxLife;
@@ -22,6 +25,7 @@ public class Status_Life {
 		life -= amount;
 
 		if(life <= 0) {
+			callOnDeath.Invoke();
             Debug.Log("OUT OF LIFE");
 		}
 	}
