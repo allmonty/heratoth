@@ -1433,7 +1433,7 @@ MonoBehaviour:
     life: 10
   stamina:
     maxStamina: 10
-    stamina: 10
+    stamina: 2
     secondsToRegen: 5
     regenRatePerSecond: 2
 --- !u!114 &2089335649
