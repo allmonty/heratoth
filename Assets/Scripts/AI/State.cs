@@ -7,9 +7,9 @@ public class State : ScriptableObject
     public Transition[] transitions;
     public Color sceneGizmoColor = Color.gray;
 
-    public void Init() {
+    public void Init(StateController controller) {
         foreach(Action action in actions) {
-            // action.Init();
+            action.Init(controller);
         }
     }
 
@@ -35,10 +35,12 @@ public class State : ScriptableObject
 
             if (decisionSucceeded)
             {
-                controller.TransitionToState(transitions[i].trueState);
+                if(transitions[i].trueState != controller.currentState && transitions[i].trueState != null)
+                    controller.TransitionToState(transitions[i].trueState);
             } else 
             {
-                controller.TransitionToState(transitions[i].falseState);
+                if(transitions[i].trueState != controller.currentState && transitions[i].falseState != null)
+                    controller.TransitionToState(transitions[i].falseState);
             }
         }
     }

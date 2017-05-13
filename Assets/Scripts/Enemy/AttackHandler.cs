@@ -16,8 +16,8 @@ public class AttackHandler : MonoBehaviour {
 	{
 		timer += Time.deltaTime;
 		if(timer >= duration) {
-			hitBox.enabled = false;
 			timer = 0f;
+			hitBox.enabled = false;
 		}
 	}
 

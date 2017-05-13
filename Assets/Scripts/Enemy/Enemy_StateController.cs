@@ -6,6 +6,8 @@ public class Enemy_StateController : StateController
 {
     public CharacterStatus  characterStatus = null;    
     public AttackHandler attackHandler = null;
+
+    public Animator anim = null;
     
     public Transform eyes = null;    
     public Transform chaseTarget = null;

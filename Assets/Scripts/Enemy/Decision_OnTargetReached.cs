@@ -13,16 +13,21 @@ public class Decision_OnTargetReached : Decision {
 	private bool isTargetReached(StateController controller) {
 		var enemyControl = controller as Enemy_StateController;
 		
-		enemyControl.navMeshAgent.destination = enemyControl.chaseTarget.position;		
+		// enemyControl.navMeshAgent.destination = enemyControl.chaseTarget.position;		
 
-		if(!overrideDistanceToReach)
-			distanceToReach = enemyControl.navMeshAgent.stoppingDistance;
+		// if(!overrideDistanceToReach)
+		// 	distanceToReach = enemyControl.navMeshAgent.stoppingDistance;
 
-		if(enemyControl.navMeshAgent.remainingDistance <= distanceToReach && !enemyControl.navMeshAgent.pathPending) {
-			enemyControl.navMeshAgent.isStopped = true;
+		// if(enemyControl.navMeshAgent.remainingDistance <= distanceToReach && !enemyControl.navMeshAgent.pathPending) {
+		// 	return true;
+		// } else {
+		// 	return false;
+		// }
+		Vector3 enemyPos = enemyControl.gameObject.transform.position;
+		Vector3 playerPos = enemyControl.chaseTarget.position;
+		if (Vector3.Distance(enemyPos, playerPos) <= distanceToReach) {
 			return true;
 		} else {
-			enemyControl.navMeshAgent.isStopped = false;
 			return false;
 		}
 	}

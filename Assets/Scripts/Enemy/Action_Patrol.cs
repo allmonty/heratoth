@@ -3,6 +3,10 @@
 [CreateAssetMenu (menuName = "AI/Actions/Enemy_Patrol")]
 public class Action_Patrol : Action
 {
+    public override void Init(StateController controller) {
+        Debug.Log("PATROL STATE");
+    }
+
 	public override void Act(StateController controller)
 	{
 		Act(controller as Enemy_StateController);
@@ -15,6 +19,7 @@ public class Action_Patrol : Action
 
     private void Patrol(Enemy_StateController controller)
     {
+        controller.anim.SetTrigger("PatrolState");
         controller.navMeshAgent.destination = controller.movementVariables.wayPointList [controller.movementVariables.nextWayPoint].position;
         controller.navMeshAgent.isStopped = false;
 
@@ -22,9 +27,5 @@ public class Action_Patrol : Action
         {
             controller.movementVariables.nextWayPoint = (controller.movementVariables.nextWayPoint + 1) % controller.movementVariables.wayPointList.Count;
         }
-    }
-    
-    public override void Init() {
-        return;
     }
 }
