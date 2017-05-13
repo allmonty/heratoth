@@ -12,6 +12,7 @@ public class Action_Attack : Action {
 
 	public override void Init(StateController controller) {
 		Debug.Log("ATTACK STATAE");
+		timer = attackDelay;
 		return;
 	}
 	
