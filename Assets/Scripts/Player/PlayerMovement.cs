@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour {
 	
 	[SerializeField] float dodgeSpeed = 10.0f;
 	[SerializeField] float dodgeDuration = 1.0f;
+	[SerializeField] float dodgeStaminaAmount = 1.0f;
+
 
 	bool isDodging = false;
 
@@ -43,6 +45,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	public void dodge(float dirX, float dirZ)
 	{
+		if (!charStats.stamina.isEnough(dodgeStaminaAmount)) return;
+
+		charStats.stamina.decrease(dodgeStaminaAmount);
+
 		Vector3 moveDirection = new Vector3();
 		if(dirX == 0.0f && dirZ == 0.0f){
 			moveDirection = transform.forward;
