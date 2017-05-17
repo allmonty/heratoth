@@ -20,4 +20,7 @@ MonoBehaviour:
   - decision: {fileID: 11400000, guid: 7ef3682f263d642f7abbbe7af5ebf093, type: 2}
     trueState: {fileID: 11400000, guid: 98b56beaea2d54838b6d6b274ff979de, type: 2}
     falseState: {fileID: 0}
+  - decision: {fileID: 11400000, guid: 4e7f1fe04e7e24256843e84d23a6344e, type: 2}
+    trueState: {fileID: 11400000, guid: 11a51e9728d744d5bbe3f9346451df88, type: 2}
+    falseState: {fileID: 0}
   sceneGizmoColor: {r: 0.8455882, g: 0.043522913, b: 0.043522913, a: 1}

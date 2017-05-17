@@ -10,7 +10,15 @@ public class Decision_HitReceived : Decision {
 	}
 
 	private bool wasHit(Enemy_StateController controller) {
-		return hit;
+		if(hit)
+		{
+			hit = false;
+			return true;
+		}
+		else
+		{
+			return false;
+		} 
 	}
 
 	public void setWasHitted()
