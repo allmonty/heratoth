@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [Serializable]
 public class Status_Stamina {
@@ -9,6 +10,9 @@ public class Status_Stamina {
 
 	public float secondsToRegen = 3f;
 	public float regenRatePerSecond = 1f;
+
+	[Serializable] public class CallBack : UnityEvent <float> {};
+	public CallBack callBackOnChange;
 
 	private float timerToRegen = 0f;
 
@@ -40,10 +44,14 @@ public class Status_Stamina {
 	}
 
 	public void decrease(float amount) {
-		if(stamina > 0) {
-			stamina -= amount;
-			timerToRegen = secondsToRegen;
+		stamina -= amount;
+		
+		if(stamina < 0) {
+			stamina = 0;
 		}
+
+		timerToRegen = secondsToRegen;
+		callBackOnChange.Invoke(stamina/maxStamina);
 	}
 
 	public void increase(float amount) {
@@ -52,5 +60,7 @@ public class Status_Stamina {
 		if(stamina > maxStamina){
 			stamina = maxStamina;
 		}
+
+		callBackOnChange.Invoke(stamina/maxStamina);
 	}
 }
