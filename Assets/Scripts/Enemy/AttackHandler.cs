@@ -25,7 +25,7 @@ public class AttackHandler : MonoBehaviour {
 		bool isPlayer = other.GetComponent<Collider>().CompareTag("Player");
 
 		if(isPlayer) {
-			// Debug.Log("ATTACK");
-		}		
+			other.gameObject.GetComponent<CharacterStatus>().life.decrease(damage);
+		}
 	}
 }
