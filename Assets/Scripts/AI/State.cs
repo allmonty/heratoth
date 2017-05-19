@@ -19,6 +19,13 @@ public class State : ScriptableObject
         CheckTransitions (controller);
     }
 
+    public virtual void Clear(StateController controller){
+        for (int i = 0; i < actions.Length; i++)
+        {
+            actions[i].Clear(controller);
+        }
+    }
+
     private void DoActions(StateController controller)
     {
         for (int i = 0; i < actions.Length; i++)

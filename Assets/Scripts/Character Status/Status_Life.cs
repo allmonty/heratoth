@@ -10,7 +10,10 @@ public class Status_Life {
 
 	[Serializable] public class CallBack : UnityEvent <float> {};	
 	public CallBack callBackOnChange;
+
 	public UnityEvent callOnDeath;
+
+	public UnityEvent callOnDamage;
 
 	public void init() {
 		life = maxLife;
@@ -29,6 +32,9 @@ public class Status_Life {
 		if(life <= 0) {
 			life = 0;
 			callOnDeath.Invoke();
+		}
+		else{
+			callOnDamage.Invoke();
 		}
 
 		callBackOnChange.Invoke(life/maxLife);

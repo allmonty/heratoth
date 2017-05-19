@@ -40,7 +40,7 @@ public class Action_Attack : Action {
 	}
 
 	private void performAttack(Enemy_StateController controller, float attackDamage, float attackDuration) {
-		controller.anim.SetTrigger("AttackState");
+		controller.anim.SetBool("AttackState", true);
 		controller.attackHandler.damage = attackDamage;
 		controller.attackHandler.duration = attackDuration;
 		controller.attackHandler.hitBox.enabled = true;
@@ -52,5 +52,10 @@ public class Action_Attack : Action {
 		float distanceFromTarget = originToTargetVector.magnitude;
 		
 		return distanceFromTarget;
+	}
+
+	public override void Clear(StateController controller){
+		var enemyControl = controller as Enemy_StateController;
+        enemyControl.anim.SetBool("AttackState", false);
 	}
 }

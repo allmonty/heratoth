@@ -11,7 +11,7 @@ public class Action_RunAway : Action {
 	float timer = 0f;
 	
 	public override void Init(StateController controller) {
-		return;
+		Debug.Log("RUN AWAY STATE");
 	}
 
 	public override void Act(StateController controller) {
@@ -32,6 +32,8 @@ public class Action_RunAway : Action {
 	}
 
 	private Vector3 getEvasionPosition(Enemy_StateController controller) {
+		controller.anim.SetBool("ChaseState", true);
+
 		Vector3 targetToAvoidPosition = controller.chaseTarget.position;
 		targetToAvoidPosition.y = 0;
 
@@ -49,5 +51,10 @@ public class Action_RunAway : Action {
 		Debug.DrawLine(runnerPosition, destination);
 
 		return destination;
+	}
+
+	public override void Clear(StateController controller){
+		var enemyControl = controller as Enemy_StateController;
+        enemyControl.anim.SetBool("ChaseState", false);
 	}
 }
