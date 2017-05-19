@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d182f70b17fda4c0a9da5a9535fee178, type: 3}
+  m_Name: Enemy_LightAttackAction
+  m_EditorClassIdentifier: 
+  staminaRequired: 1.5
+  attackDelay: 2
+  attackDuration: 1
+  attackDamage: 1
+  attackRange: 3
