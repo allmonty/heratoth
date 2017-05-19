@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.55
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -473,15 +473,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4298310668710474, guid: 1691bbc7f8c7a437b862e6ed5a360d2b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4298310668710474, guid: 1691bbc7f8c7a437b862e6ed5a360d2b, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.0000002
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4298310668710474, guid: 1691bbc7f8c7a437b862e6ed5a360d2b, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.0000002
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1163873332713302, guid: 1691bbc7f8c7a437b862e6ed5a360d2b, type: 2}
       propertyPath: m_Name
@@ -521,6 +521,30 @@ Prefab:
       propertyPath: chaseTarget
       value: 
       objectReference: {fileID: 609650954}
+    - target: {fileID: 4298310668710474, guid: 1691bbc7f8c7a437b862e6ed5a360d2b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 65635173771184702, guid: 1691bbc7f8c7a437b862e6ed5a360d2b,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65635173771184702, guid: 1691bbc7f8c7a437b862e6ed5a360d2b,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 65635173771184702, guid: 1691bbc7f8c7a437b862e6ed5a360d2b,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65635173771184702, guid: 1691bbc7f8c7a437b862e6ed5a360d2b,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1691bbc7f8c7a437b862e6ed5a360d2b, type: 2}
   m_IsPrefabParent: 0

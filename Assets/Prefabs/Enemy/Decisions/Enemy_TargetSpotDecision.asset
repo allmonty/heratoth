@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Name: Enemy_TargetSpotDecision
   m_EditorClassIdentifier: 
   lookRange: 10
+  lookMaxAngle: 20
   targetTag: Player
+  target: {fileID: 0}
