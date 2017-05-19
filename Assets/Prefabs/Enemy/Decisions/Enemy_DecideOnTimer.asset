@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cefb7c97aac4cddb25188e6cb75916, type: 3}
   m_Name: Enemy_DecideOnTimer
   m_EditorClassIdentifier: 
-  timeToDecide: 4
+  timeToDecide: 2

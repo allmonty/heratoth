@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2effa759894664a4cae4eac1826a18c6, type: 3}
   m_Name: Enemy_Stunned
   m_EditorClassIdentifier: 
-  actions: []
+  actions:
+  - {fileID: 11400000, guid: d36ae372e1ed90a47a8245a0b1838701, type: 2}
   transitions:
   - decision: {fileID: 11400000, guid: cd0d8baa695b04f6e8780224ac9bdf2b, type: 2}
     trueState: {fileID: 11400000, guid: 27cf381ebbbbc49d4ba7484f2e688134, type: 2}
     falseState: {fileID: 0}
-  sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  sceneGizmoColor: {r: 0, g: 0.751724, b: 1, a: 1}

@@ -19,7 +19,7 @@ public class Action_Patrol : Action
 
     private void Patrol(Enemy_StateController controller)
     {
-        controller.anim.SetTrigger("PatrolState");
+        controller.anim.SetBool("PatrolState", true);
         controller.navMeshAgent.destination = controller.movementVariables.wayPointList [controller.movementVariables.nextWayPoint].position;
         controller.navMeshAgent.isStopped = false;
 
@@ -28,4 +28,9 @@ public class Action_Patrol : Action
             controller.movementVariables.nextWayPoint = (controller.movementVariables.nextWayPoint + 1) % controller.movementVariables.wayPointList.Count;
         }
     }
+
+    public override void Clear(StateController controller){
+		var enemyControl = controller as Enemy_StateController;
+        enemyControl.anim.SetBool("PatrolState", false);
+	}
 }

@@ -14,9 +14,14 @@ public class Action_Chase : Action {
 
 	private void chase(StateController controller) {
 		var enemyControl = controller as Enemy_StateController;
-        enemyControl.anim.SetTrigger("ChaseState");
+        enemyControl.anim.SetBool("ChaseState", true);
 
 		enemyControl.navMeshAgent.isStopped = false;
 		enemyControl.navMeshAgent.destination = enemyControl.chaseTarget.position;
+	}
+
+	public override void Clear(StateController controller){
+		var enemyControl = controller as Enemy_StateController;
+        enemyControl.anim.SetBool("ChaseState", false);
 	}
 }

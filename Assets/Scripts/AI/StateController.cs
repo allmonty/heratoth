@@ -21,11 +21,9 @@ public abstract class StateController : MonoBehaviour
 	{
 		if (nextState != currentState)
 		{
+			currentState.Clear(this);
 			currentState = nextState;
 			currentState.Init(this);
-			OnExitState();
 		}
 	}
-
-	protected virtual void OnExitState() {/*Reset the states attribute here*/}
 }
