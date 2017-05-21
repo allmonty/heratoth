@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour {
+public class AttackHandler : MonoBehaviour {
 
 	[SerializeField] CharacterStatus charStats = null;
 	[SerializeField] GameObject attackBox = null;
-	[SerializeField] PlayerAttackStatus lightAttackStats;
-	[SerializeField] PlayerAttackStatus heavyAttackStats;
+	[SerializeField] AttackStatus lightAttackStats;
+	[SerializeField] AttackStatus heavyAttackStats;
+	[SerializeField] string animationParam = "attack";
 
-	PlayerAttackStatus currentAtkStats = null;
+	AttackStatus currentAtkStats = null;
+
 	Animator anim = null;
+
 	int attackAnimVal = 0;
 	bool isAttacking = false;
 
@@ -40,12 +43,16 @@ public class PlayerAttack : MonoBehaviour {
 	public void doDamage(CharacterStatus enemy)
 	{
 		enemy.life.decrease(currentAtkStats.damage);
-		endAttack();
+	}
+
+	public void endAnimations()
+	{
+		anim.SetInteger(animationParam, 0);
 	}
 
 	private void startAttack()
 	{
-		anim.SetInteger("attack", attackAnimVal);
+		anim.SetInteger(animationParam, attackAnimVal);
 		isAttacking = true;
 		charStats.stamina.decrease(currentAtkStats.staminaCost);
 		Invoke("activateAttack", currentAtkStats.attackDelay);
@@ -59,7 +66,7 @@ public class PlayerAttack : MonoBehaviour {
 
 	private void endAttack()
 	{
-		anim.SetInteger("attack", 0);
+		anim.SetInteger(animationParam, 0);
 		attackBox.SetActive(false);
 		isAttacking = false;
 	}

@@ -3283,7 +3283,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566886538717594}
-  m_LocalRotation: {x: -0.25770885, y: 0.8815545, z: 0.34926894, w: -0.18563123}
+  m_LocalRotation: {x: -0.25770888, y: 0.8815546, z: 0.34926897, w: -0.18563125}
   m_LocalPosition: {x: 3.72529e-10, y: 0.010369115, z: 0.0000000021979212}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children:
@@ -3647,15 +3647,16 @@ MonoBehaviour:
   charStats: {fileID: 114994416702935020}
   attackBox: {fileID: 1774489025290226}
   lightAttackStats:
-    damage: 3
+    damage: 2
     staminaCost: 2
-    attackDuration: 0.15
-    attackDelay: 0.3
+    attackDuration: 0.5
+    attackDelay: 0.2
   heavyAttackStats:
-    damage: 6
-    staminaCost: 5
-    attackDuration: 0.2
-    attackDelay: 0.8
+    damage: 2
+    staminaCost: 2
+    attackDuration: 0.5
+    attackDelay: 0.2
+  animationParam: attack
 --- !u!114 &114967160952844980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3698,7 +3699,7 @@ MonoBehaviour:
   life:
     maxLife: 5
     life: 5
-    callBackOnChange:
+    callOnChange:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
@@ -3714,11 +3715,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: Status_Life+CallBack, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-    callOnDeath:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
     callOnDamage:
       m_PersistentCalls:
         m_Calls:
@@ -3733,6 +3729,11 @@ MonoBehaviour:
             m_StringArgument: reactState
             m_BoolArgument: 0
           m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    callOnDeath:
+      m_PersistentCalls:
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
   stamina:

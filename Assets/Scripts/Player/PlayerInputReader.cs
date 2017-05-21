@@ -13,7 +13,7 @@ public class PlayerInputStrings {
 public class PlayerInputReader : MonoBehaviour {
 
 	[SerializeField] PlayerMovement playerMovement = null;
-	[SerializeField] PlayerAttack playerAttack = null;
+	[SerializeField] AttackHandler playerAttack = null;
 
     [SerializeField] PlayerInputStrings inputStrings;
 
