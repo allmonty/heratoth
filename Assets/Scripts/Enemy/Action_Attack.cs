@@ -1,61 +1,22 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Actions/Enemy_Attack")]
-public class Action_Attack : Action {
-	[SerializeField] float staminaRequired = 2f;
-	[SerializeField] float attackDelay     = 1f;
-	[SerializeField] float attackDuration  = 1f;
-	[SerializeField] float attackDamage    = 1f;
-	[SerializeField] float attackRange     = 2f;
-
-	float timer;
-
+public class Action_Attack : Action
+{
 	public override void Init(StateController controller) {
-		Debug.Log("ATTACK STATAE");
-		timer = attackDelay;
-		return;
+		Debug.Log("ATTACK STATE");
 	}
 	
 	public override void Act(StateController controller) {		
-		attackRoutine(controller as Enemy_StateController);
+		attack(controller as Enemy_StateController);
 	}
 
-	private void attackRoutine(Enemy_StateController controller) {
-		Vector3 targetPosition = controller.chaseTarget.transform.position;
-		float distanceFromTarget = getDistanceFromTarget(targetPosition, controller);
-		bool hasStamina = controller.characterStatus.stamina.isEnough(staminaRequired);
-
-		if(hasStamina) {
-			if(timer >= attackDelay) {
-				timer = attackDelay;
-				controller.characterStatus.stamina.decrease(staminaRequired);
-				performAttack(controller, attackDamage, attackDuration);
-				timer = 0f;
-			} else {
-				timer += Time.deltaTime;
-			}
-		} else {
-			timer = attackDelay;	
-		}
-	}
-
-	private void performAttack(Enemy_StateController controller, float attackDamage, float attackDuration) {
-		controller.anim.SetBool("AttackState", true);
-		controller.attackHandler.damage = attackDamage;
-		controller.attackHandler.duration = attackDuration;
-		controller.attackHandler.hitBox.enabled = true;
-	}
-
-	private float getDistanceFromTarget(Vector3 targetPosition, Enemy_StateController controller) {
-		Vector3 originPosition = controller.eyes.position;
-		Vector3 originToTargetVector = targetPosition - originPosition;
-		float distanceFromTarget = originToTargetVector.magnitude;
-		
-		return distanceFromTarget;
+	private void attack(Enemy_StateController controller) {
+		controller.attackHandler.lightAttack();
 	}
 
 	public override void Clear(StateController controller){
 		var enemyControl = controller as Enemy_StateController;
-        enemyControl.anim.SetBool("AttackState", false);
+        enemyControl.attackHandler.endAnimations();
 	}
 }

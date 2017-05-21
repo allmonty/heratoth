@@ -3,17 +3,15 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
-public class Status_Life {
-
+public class Status_Life
+{
 	public float maxLife = 10f;
 	public float life = 10f;
 
-	[Serializable] public class CallBack : UnityEvent <float> {};	
-	public CallBack callBackOnChange;
-
-	public UnityEvent callOnDeath;
-
+	[Serializable] public class CallBack : UnityEvent <float> {};
+	public CallBack callOnChange;
 	public UnityEvent callOnDamage;
+	public UnityEvent callOnDeath;
 
 	public void init() {
 		life = maxLife;
@@ -37,7 +35,7 @@ public class Status_Life {
 			callOnDamage.Invoke();
 		}
 
-		callBackOnChange.Invoke(life/maxLife);
+		callOnChange.Invoke(life/maxLife);
 	}
 
 	public void increase(float amount) {
@@ -47,6 +45,6 @@ public class Status_Life {
 			life = maxLife;
 		}
 
-		callBackOnChange.Invoke(life/maxLife);
+		callOnChange.Invoke(life/maxLife);
 	}
 }

@@ -1,27 +1,26 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Actions/Chase")]
-public class Action_Chase : Action {
-
+public class Action_Chase : Action
+{
 	public override void Init(StateController controller) {
 		Debug.Log("CHASE STATE");
-		var control = controller as Enemy_StateController;
 	}
 
 	public override void Act(StateController controller) {
-		chase(controller);
+		chase(controller as Enemy_StateController);
 	}
 
-	private void chase(StateController controller) {
-		var enemyControl = controller as Enemy_StateController;
-        enemyControl.anim.SetBool("ChaseState", true);
+	private void chase(Enemy_StateController controller) {
+        controller.anim.SetBool("ChaseState", true);
 
-		enemyControl.navMeshAgent.isStopped = false;
-		enemyControl.navMeshAgent.destination = enemyControl.chaseTarget.position;
+		controller.navMeshAgent.isStopped = false;
+		controller.navMeshAgent.destination = controller.chaseTarget.position;
 	}
 
 	public override void Clear(StateController controller){
 		var enemyControl = controller as Enemy_StateController;
+
         enemyControl.anim.SetBool("ChaseState", false);
 	}
 }

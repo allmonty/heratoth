@@ -1,33 +1,28 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Decisions/TargetSpot")]
-public class Decision_OnTargetSpotted : Decision {
-	
+public class Decision_OnTargetSpotted : Decision
+{
 	[SerializeField] float lookRange = 5f;
 	[SerializeField] float lookMaxAngle = 20f;
-	[SerializeField] string targetTag = "Player";
-
-	[SerializeField] Transform target = null;
 
 	public override bool Decide(StateController controller) {
 		return TargetInSight(controller);
 	}
 
 	private bool TargetInSight(StateController controller) {
-		Enemy_StateController control = controller as Enemy_StateController;
+		var control = controller as Enemy_StateController;
 		Transform spotter = control.gameObject.transform;
-		
-		setTarget(control);
 
 		debugVision(control);
 
-		if(Vector3.Distance(spotter.position, target.position) >= lookRange)
+		if(Vector3.Distance(spotter.position, control.chaseTarget.position) > lookRange)
 		{
 			return false;
 		}
 		else
 		{
-			Vector3 targetDir = (target.position - spotter.position).normalized;
+			Vector3 targetDir = (control.chaseTarget.position - spotter.position).normalized;
 			if(Vector3.Angle(spotter.forward, targetDir) > lookMaxAngle)
 			{
 				return false;
@@ -36,19 +31,6 @@ public class Decision_OnTargetSpotted : Decision {
 			{
 				return true;
 			}
-		}
-	}
-
-	private void setTarget(Enemy_StateController control)
-	{
-		if(control.chaseTarget == null)
-		{
-			if(target == null)
-				target = GameObject.FindGameObjectWithTag("Player").transform;
-		}
-		else
-		{
-			target = control.chaseTarget;
 		}
 	}
 

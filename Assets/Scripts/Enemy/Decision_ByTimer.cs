@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Decisions/DecideOnTimer")]
-public class Decision_DecideOnTimer : Decision {
-
+public class Decision_ByTimer : Decision
+{
 	[SerializeField] float timeToDecide = 1f;
+
 	float timer = 0f;
 
 	public override bool Decide(StateController controller) {
