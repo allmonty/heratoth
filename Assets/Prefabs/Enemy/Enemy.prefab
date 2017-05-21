@@ -1562,7 +1562,6 @@ MonoBehaviour:
     nextWayPoint: 0
   hitProcessingVariables:
     wasHit: 0
-    processingHit: 0
     timeToForgetHit: 1
   characterStatus: {fileID: 114633624181624072}
   attackHandler: {fileID: 114509390756005662}
