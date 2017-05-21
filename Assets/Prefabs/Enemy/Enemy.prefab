@@ -469,10 +469,10 @@ GameObject:
   m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -6431860639581277017, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1663516032839914
 GameObject:
   m_ObjectHideFlags: 1
@@ -899,8 +899,8 @@ Transform:
   m_LocalPosition: {x: -16.48, y: 5.2, z: 35.47}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
-  - {fileID: 4374490996439820}
   - {fileID: 4343554425238080}
+  - {fileID: 4374490996439820}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -945,7 +945,7 @@ Transform:
   - {fileID: 4239339976091658}
   - {fileID: 4120021087445994}
   m_Father: {fileID: 4298310668710474}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4370324798082032
 Transform:
@@ -974,7 +974,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4298310668710474}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4456890070560526
 Transform:
@@ -1389,7 +1389,7 @@ BoxCollider:
   m_GameObject: {fileID: 1163873332713302}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 3, z: 2}
   m_Center: {x: 0, y: 1, z: 1.3}
@@ -1438,10 +1438,26 @@ MonoBehaviour:
   life:
     maxLife: 20
     life: 10
-    callBackOnChange:
+    callOnChange:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: Status_Life+CallBack, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    callOnDamage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114987721021276006}
+          m_MethodName: processHitReceived
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
     callOnDeath:
       m_PersistentCalls:
@@ -1458,8 +1474,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 114987721021276006}
-          m_MethodName: set_enabled
-          m_Mode: 6
+          m_MethodName: turnOffAI
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1510,22 +1526,6 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    callOnDamage:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11400000, guid: 1fb6b9474757a4d4e84fc74a65245495, type: 2}
-          m_MethodName: setWasHitted
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
@@ -1553,17 +1553,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: 56e77cded47b2974181a9feaed4c4196, type: 2}
   navMeshAgent: {fileID: 0}
-  characterStatus: {fileID: 114633624181624072}
-  attackHandler: {fileID: 114509390756005662}
-  anim: {fileID: 95804543181886052}
   eyes: {fileID: 4374490996439820}
-  chaseTarget: {fileID: 0}
   movementVariables:
     wayPointList:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     nextWayPoint: 0
+  hitProcessingVariables:
+    wasHit: 0
+    processingHit: 0
+    timeToForgetHit: 1
+  characterStatus: {fileID: 114633624181624072}
+  attackHandler: {fileID: 114509390756005662}
+  anim: {fileID: 95804543181886052}
+  chaseTarget: {fileID: 0}
 --- !u!136 &136894550115994872
 CapsuleCollider:
   m_ObjectHideFlags: 1

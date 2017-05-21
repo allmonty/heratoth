@@ -9,17 +9,13 @@ public class Action_Patrol : Action
 
 	public override void Act(StateController controller)
 	{
-		Act(controller as Enemy_StateController);
+		patrol(controller as Enemy_StateController);
     }
 
-	public void Act(Enemy_StateController controller)
-    {
-        Patrol(controller);
-    }
-
-    private void Patrol(Enemy_StateController controller)
+    private void patrol(Enemy_StateController controller)
     {
         controller.anim.SetBool("PatrolState", true);
+
         controller.navMeshAgent.destination = controller.movementVariables.wayPointList [controller.movementVariables.nextWayPoint].position;
         controller.navMeshAgent.isStopped = false;
 
@@ -31,6 +27,7 @@ public class Action_Patrol : Action
 
     public override void Clear(StateController controller){
 		var enemyControl = controller as Enemy_StateController;
+
         enemyControl.anim.SetBool("PatrolState", false);
 	}
 }

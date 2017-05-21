@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (menuName = "AI/Actions/Enemy_Evasion")]
-public class Action_RunAway : Action {
-	[SerializeField] float safeDistanceMultiplier = 3f;
+public class Action_RunAway : Action
+{
+	[SerializeField] float safeDistance = 3f;
 	[SerializeField] float timeToChangeDirection = 2f;
 
 	float randomDirectionAngle = 0f;
@@ -25,6 +26,8 @@ public class Action_RunAway : Action {
 			randomDirectionAngle = Random.Range(-45f, 45f);
 		}
 
+		controller.anim.SetBool("ChaseState", true);
+
 		Vector3 destination = getEvasionPosition(controller);
 
 		controller.navMeshAgent.SetDestination(destination);
@@ -32,20 +35,18 @@ public class Action_RunAway : Action {
 	}
 
 	private Vector3 getEvasionPosition(Enemy_StateController controller) {
-		controller.anim.SetBool("ChaseState", true);
-
+		
 		Vector3 targetToAvoidPosition = controller.chaseTarget.position;
 		targetToAvoidPosition.y = 0;
 
 		Vector3 runnerPosition = controller.transform.position;
 		runnerPosition.y = 0;
 
-		Vector3 directionToAvoid = (targetToAvoidPosition - runnerPosition).normalized;
-		Vector3 direction = (directionToAvoid * -1) * safeDistanceMultiplier;
+		Vector3 directionToRunAway = (targetToAvoidPosition - runnerPosition).normalized;
+		directionToRunAway = (directionToRunAway * -1) * safeDistance;
+		directionToRunAway = Quaternion.AngleAxis( randomDirectionAngle, Vector3.up ) * directionToRunAway;
 
-		direction = Quaternion.AngleAxis( randomDirectionAngle, Vector3.up ) * direction;
-
-		Vector3 destination = runnerPosition + direction;
+		Vector3 destination = runnerPosition + directionToRunAway;
 		
 		Debug.DrawLine(targetToAvoidPosition, runnerPosition, Color.yellow);
 		Debug.DrawLine(runnerPosition, destination);

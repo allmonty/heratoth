@@ -19,7 +19,7 @@ public class State : ScriptableObject
         CheckTransitions (controller);
     }
 
-    public virtual void Clear(StateController controller){
+    public void Clear(StateController controller){
         for (int i = 0; i < actions.Length; i++)
         {
             actions[i].Clear(controller);
@@ -36,7 +36,7 @@ public class State : ScriptableObject
 
     private void CheckTransitions(StateController controller)
     {
-        for (int i = 0; i < transitions.Length; i++) 
+        for (int i = 0; i < transitions.Length; i++)
         {
             bool decisionSucceeded = transitions[i].decision.Decide(controller);
 
@@ -44,7 +44,8 @@ public class State : ScriptableObject
             {
                 if(transitions[i].trueState != controller.currentState && transitions[i].trueState != null)
                     controller.TransitionToState(transitions[i].trueState);
-            } else 
+            }
+            else 
             {
                 if(transitions[i].trueState != controller.currentState && transitions[i].falseState != null)
                     controller.TransitionToState(transitions[i].falseState);
