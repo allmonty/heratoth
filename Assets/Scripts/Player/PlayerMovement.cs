@@ -75,7 +75,6 @@ public class PlayerMovement : MonoBehaviour {
 		while(isDodging)
 		{
 			rigid.velocity = dodgeVelocity;
-			Debug.Log("teste");
 			yield return null;
 		}
 	}

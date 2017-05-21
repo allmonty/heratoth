@@ -1670,9 +1670,9 @@ GameObject:
   - component: {fileID: 4910790961655864}
   - component: {fileID: 54724340145426160}
   - component: {fileID: 136407659936706404}
-  - component: {fileID: 114994416702935020}
   - component: {fileID: 114464580638546868}
   - component: {fileID: 114178913259180088}
+  - component: {fileID: 114994416702935020}
   - component: {fileID: 114771041545600178}
   m_Layer: 8
   m_Name: Player
@@ -3283,7 +3283,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566886538717594}
-  m_LocalRotation: {x: -0.25770888, y: 0.8815546, z: 0.34926897, w: -0.18563125}
+  m_LocalRotation: {x: -0.25770885, y: 0.8815545, z: 0.34926894, w: -0.18563123}
   m_LocalPosition: {x: 3.72529e-10, y: 0.010369115, z: 0.0000000021979212}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children:
@@ -3649,13 +3649,13 @@ MonoBehaviour:
   lightAttackStats:
     damage: 2
     staminaCost: 2
-    attackDuration: 0.5
-    attackDelay: 0.2
+    attackDuration: 0.3
+    attackDelay: 0.31
   heavyAttackStats:
     damage: 2
     staminaCost: 2
-    attackDuration: 0.5
-    attackDelay: 0.2
+    attackDuration: 1
+    attackDelay: 0.8
   animationParam: attack
 --- !u!114 &114967160952844980
 MonoBehaviour:
@@ -3737,7 +3737,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
   stamina:
-    maxStamina: 10
+    maxStamina: 10000
     stamina: 10
     secondsToRegen: 3
     regenRatePerSecond: 1
