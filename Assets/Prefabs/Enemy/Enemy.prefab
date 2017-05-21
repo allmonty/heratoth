@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 33796054248542240}
   - component: {fileID: 23581684443045556}
   - component: {fileID: 114185639691850308}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Attack Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1001,7 +1001,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1791240164290076}
-  m_LocalRotation: {x: -0.25770885, y: 0.8815545, z: 0.34926894, w: -0.18563123}
+  m_LocalRotation: {x: -0.25770888, y: 0.8815546, z: 0.34926897, w: -0.18563125}
   m_LocalPosition: {x: 3.72529e-10, y: 0.010369115, z: 0.0000000021979212}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children:
@@ -1522,7 +1522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life:
     maxLife: 20
-    life: 10
+    life: 20
     callOnChange:
       m_PersistentCalls:
         m_Calls: []
@@ -1569,28 +1569,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 195744304232870542}
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 114633624181624072}
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 136894550115994872}
           m_MethodName: set_enabled
           m_Mode: 6
@@ -1611,13 +1589,13 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
   stamina:
-    maxStamina: 100000000
-    stamina: 2
+    maxStamina: 10
+    stamina: 10
     secondsToRegen: 5
     regenRatePerSecond: 2
     callBackOnChange:

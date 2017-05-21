@@ -16,6 +16,9 @@ public class AttackBox : MonoBehaviour {
 		if(col.gameObject.layer == LayerMask.NameToLayer(layerToHit))
 		{
 			CharacterStatus enemyStatus = col.gameObject.GetComponent<CharacterStatus>();
+			if(enemyStatus == null)
+				enemyStatus = col.gameObject.GetComponentInParent<CharacterStatus>();
+
 			callBack.Invoke(enemyStatus);
 		}
 	}

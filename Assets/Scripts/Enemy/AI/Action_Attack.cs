@@ -17,6 +17,6 @@ public class Action_Attack : Action
 
 	public override void Clear(StateController controller){
 		var enemyControl = controller as Enemy_StateController;
-        enemyControl.attackHandler.endAnimations();
+        enemyControl.attackHandler.cutOffAttacking();
 	}
 }
