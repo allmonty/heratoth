@@ -225,7 +225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1864305112900050
 GameObject:
   m_ObjectHideFlags: 1
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 114155295975862192}
   steps:
-  - duration: 3
+  - duration: 2.5
     delayToNext: 2
     isFadeOut: 0
   - duration: 3
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 114988925610549422}
   steps:
-  - duration: 3
+  - duration: 2.5
     delayToNext: 2
     isFadeOut: 0
   - duration: 3
