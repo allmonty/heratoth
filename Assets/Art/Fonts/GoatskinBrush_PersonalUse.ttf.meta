@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 36376f440992122409151c3d1d9764cf
+timeCreated: 1495388601
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Goatskin Brush Personal Use
+  fontNames:
+  - Goatskin Brush Personal Use
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
