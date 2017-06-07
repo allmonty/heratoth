@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/ProtoType.unity
-    guid: 00000000000000000000000000000000
+    path: Assets/_Scenes/Test_Stealth.unity
+    guid: 398b89152508949c0875f456ecad5e9a
