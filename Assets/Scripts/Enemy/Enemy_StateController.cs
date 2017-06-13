@@ -22,7 +22,9 @@ public class Enemy_StateController : StateController
         characterStatus = GetComponent<CharacterStatus>();
         attackHandler   = GetComponent<AttackHandler>();
         anim            = transform.GetComponentInChildren<Animator>();
-        chaseTarget     = GameObject.FindGameObjectWithTag("Player").transform;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null) chaseTarget = player.transform;
     }
 
     override protected void Update()
