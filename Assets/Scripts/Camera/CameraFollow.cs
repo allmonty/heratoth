@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
-	public Transform target;
+	public Transform target = null;
 
 	public float smoothing = 5f;
 
 	public Vector3 offset = Vector3.zero;
 
-	public bool dinamicOffset = false;
+	public bool dynamicOffset = false;
 	
 	void Start()
 	{
-		if(dinamicOffset) offset = transform.position - target.position;
+		if(target == null) target = GameObject.FindGameObjectWithTag("Player").transform;
+
+		if(dynamicOffset) offset = transform.position - target.position;
 	}
 
 	void FixedUpdate()
