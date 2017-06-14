@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 92581449561537424}
   - component: {fileID: 81853967259988420}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4757574878332270}
   - component: {fileID: 114290094327518044}
   m_Layer: 0
-  m_Name: Cameras
+  m_Name: CameraSet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,15 +95,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1739988245980170}
-  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -19.37, y: 13, z: -6.63}
+  m_LocalRotation: {x: 0.45235685, y: 0, z: 0, w: 0.891837}
+  m_LocalPosition: {x: 2.8, y: 21.88, z: -24.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4018053291956048}
   - {fileID: 4153191488572106}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 53.79, y: 0, z: 0}
 --- !u!20 &20034343581691034
 Camera:
   m_ObjectHideFlags: 1
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   smoothing: 5
-  offset: {x: -13, y: 13, z: -13}
+  offset: {x: 0, y: 13, z: 0}
   dinamicOffset: 0
 --- !u!114 &114897406614733172
 MonoBehaviour:
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XRayShader: {fileID: 4800000, guid: ffb57f77504d1d24eb8c21861da7f082, type: 3}
+  tag: XRay
 --- !u!124 &124119701976165850
 Behaviour:
   m_ObjectHideFlags: 1
