@@ -5,7 +5,6 @@ public class Decision_OnTargetSpotted : Decision
 {
 	[SerializeField] float lookRange = 5f;
 	[SerializeField] float lookMaxAngle = 20f;
-	[SerializeField] float sphereCastRadius = 1f;
 
 	public override bool Decide(StateController controller) {
 		return TargetInSight(controller);
