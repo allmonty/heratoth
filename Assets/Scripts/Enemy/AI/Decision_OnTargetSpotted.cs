@@ -5,6 +5,7 @@ public class Decision_OnTargetSpotted : Decision
 {
 	[SerializeField] float lookRange = 5f;
 	[SerializeField] float lookMaxAngle = 20f;
+	[SerializeField] float sphereCastRadius = 1f;
 
 	public override bool Decide(StateController controller) {
 		return TargetInSight(controller);
@@ -16,22 +17,22 @@ public class Decision_OnTargetSpotted : Decision
 
 		debugVision(control);
 
-		if(Vector3.Distance(spotter.position, control.chaseTarget.position) > lookRange)
-		{
-			return false;
-		}
-		else
+		if(Vector3.Distance(spotter.position, control.chaseTarget.position) <= lookRange)
 		{
 			Vector3 targetDir = (control.chaseTarget.position - spotter.position).normalized;
-			if(Vector3.Angle(spotter.forward, targetDir) > lookMaxAngle)
+			if(Vector3.Angle(spotter.forward, targetDir) <= lookMaxAngle)
 			{
-				return false;
-			}
-			else
-			{
-				return true;
+				RaycastHit hitInfo = new RaycastHit();
+				if(Physics.Raycast(spotter.position, targetDir, out hitInfo, lookRange)){
+					if(hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+					{
+						return true;
+					}
+				}
 			}
 		}
+
+		return false;
 	}
 
 	private void debugVision(Enemy_StateController control)	
