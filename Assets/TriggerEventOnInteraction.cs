@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class TriggerEventOnInteraction : MonoBehaviour {
 
-	public UnityEvent eventOnStay;
+	public UnityEvent eventOnInteraction;
 	public UnityEvent eventOnExit;
 
 	public string layerToDetect = "Player";
@@ -21,7 +21,7 @@ public class TriggerEventOnInteraction : MonoBehaviour {
 			if(Input.GetButtonDown(triggerButton))
 			{
 				if(!triggered)
-					eventOnStay.Invoke();
+					eventOnInteraction.Invoke();
 				else
 					eventOnExit.Invoke();
 
