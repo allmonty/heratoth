@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: PlayerSpotted
   m_EditorClassIdentifier: 
   actions:
+  - {fileID: 11400000, guid: d8397d5406a94498085d8f7f69e36182, type: 2}
   - {fileID: 11400000, guid: a2d35115bc614423e805784eeb012b1e, type: 2}
   transitions: []
   sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

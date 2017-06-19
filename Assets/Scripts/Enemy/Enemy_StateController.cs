@@ -2,8 +2,6 @@
 using UnityEngine;
 using System.Linq;
 
-[RequireComponent(typeof(CharacterStatus))]
-[RequireComponent(typeof(AttackHandler))]
 public class Enemy_StateController : StateController
 {
     public Transform eyes = null;    
