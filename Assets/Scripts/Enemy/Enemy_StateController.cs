@@ -6,10 +6,9 @@ public class Enemy_StateController : StateController
 {
     public Transform eyes = null;    
     public Enemy_MovementVariables movementVariables;
-    public Enemy_HitProcessingVariales hitProcessingVariables;
     
-    [HideInInspector] public CharacterStatus  characterStatus   = null;
-    [HideInInspector] public AttackHandler attackHandler        = null;
+    public bool heardSound = false;
+    
     [HideInInspector] public Animator anim                      = null;
     [HideInInspector] public Transform chaseTarget              = null;
 
@@ -17,8 +16,6 @@ public class Enemy_StateController : StateController
     {
 		base.Awake();
 
-        characterStatus = GetComponent<CharacterStatus>();
-        attackHandler   = GetComponent<AttackHandler>();
         anim            = transform.GetComponentInChildren<Animator>();
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -35,19 +32,6 @@ public class Enemy_StateController : StateController
         currentState.Clear(this);
         navMeshAgent.isStopped = true;
         enabled = false;
-    }
-
-    public void processHitReceived()
-    {
-        //stays marked as wasHit until timeToForgetHit
-        CancelInvoke("setHitNotReceived");
-        hitProcessingVariables.wasHit = true;
-        Invoke("setHitNotReceived", hitProcessingVariables.timeToForgetHit);
-    }
-
-    private void setHitNotReceived()
-    {
-        hitProcessingVariables.wasHit = false;
     }
 
     void OnDrawGizmos()

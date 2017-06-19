@@ -8,6 +8,6 @@ public class Decision_HitReceived : Decision
 	}
 
 	private bool wasHit(Enemy_StateController controller) {
-		return controller.hitProcessingVariables.wasHit;
+		return false;//controller.hitProcessingVariables.wasHit;
 	}
 }
