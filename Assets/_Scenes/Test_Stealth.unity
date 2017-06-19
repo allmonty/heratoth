@@ -423,6 +423,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverDisplay: {fileID: 1329593175}
   victoryDisplay: {fileID: 1629989109}
+  playerStopper:
+    playerInputReader: {fileID: 2048212696}
+    playerRigidBody: {fileID: 2048212698}
+    playerAnimator: {fileID: 863105417}
 --- !u!4 &600857110
 Transform:
   m_ObjectHideFlags: 0
@@ -441,6 +445,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1573001357571682, guid: 3d895722f300c4f3f94b8aab8b347153,
     type: 2}
   m_PrefabInternal: {fileID: 1432782243}
+--- !u!95 &863105417 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95826704967681646, guid: 11d73cc89d156224c9c0d42197d49918,
+    type: 2}
+  m_PrefabInternal: {fileID: 1471269646}
 --- !u!1 &887066761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1106,17 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2019134122}
+--- !u!114 &2048212696 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114464580638546868, guid: 11d73cc89d156224c9c0d42197d49918,
+    type: 2}
+  m_PrefabInternal: {fileID: 1471269646}
+  m_Script: {fileID: 11500000, guid: bd7ad8a9931110948886948bd88a0f75, type: 3}
+--- !u!54 &2048212698 stripped
+Rigidbody:
+  m_PrefabParentObject: {fileID: 54724340145426160, guid: 11d73cc89d156224c9c0d42197d49918,
+    type: 2}
+  m_PrefabInternal: {fileID: 1471269646}
 --- !u!20 &2144898757 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20671332410101150, guid: 464b6453b2d864edea328cc70eff8cda,
