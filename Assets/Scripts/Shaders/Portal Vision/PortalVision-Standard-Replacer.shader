@@ -59,6 +59,7 @@ Shader "Portal Vision Shaders/Unity Standard Replacer"
 		{
 			Ref 0
 			Comp NotEqual
+			Pass Replace
 		}
 
 		Tags {
