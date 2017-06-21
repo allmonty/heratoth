@@ -15,7 +15,7 @@ public class Action_Patrol : Action
     private void patrol(Enemy_StateController controller)
     {
         controller.anim.SetBool("PatrolState", true);
-
+        Debug.Log(controller.movementVariables.nextWayPoint);
         controller.navMeshAgent.destination = controller.movementVariables.wayPointList [controller.movementVariables.nextWayPoint].position;
         controller.navMeshAgent.isStopped = false;
 
