@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2effa759894664a4cae4eac1826a18c6, type: 3}
   m_Name: Investigate
   m_EditorClassIdentifier: 
-  actions: []
+  actions:
+  - {fileID: 0}
   transitions: []
   sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
