@@ -21,7 +21,11 @@ public class GameManager : MonoBehaviour
 	static public GameManager instance = null;
 
 	public GameObject gameOverDisplay;
+	public string gameoverSceneName;
 	public GameObject victoryDisplay;
+	public string victoryGameSceneName;
+
+	public float sceneTransitionTime;
 
 	public PlayerStopper playerStopper;
 
@@ -35,13 +39,13 @@ public class GameManager : MonoBehaviour
 
 	public void gameOver() {
 		gameOverDisplay.SetActive(true);
-		StartCoroutine(reloadCurrentScene(5));
+		StartCoroutine(loadSceneWithDelay(gameoverSceneName, sceneTransitionTime));
 		playerStopper.stop();
 	}
 
 	public void victory() {
 		victoryDisplay.SetActive(true);
-		StartCoroutine(reloadCurrentScene(5));
+		StartCoroutine(loadSceneWithDelay(victoryGameSceneName, sceneTransitionTime));
 		playerStopper.stop();
 	}
 
@@ -49,8 +53,8 @@ public class GameManager : MonoBehaviour
 		SceneManager.LoadScene(sceneName);
 	}
 
-	IEnumerator reloadCurrentScene(float waitTime) {
+	IEnumerator loadSceneWithDelay(string sceneName, float waitTime) {
 		yield return new WaitForSeconds(waitTime);
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		SceneManager.LoadScene(sceneName);
 	}
 }
