@@ -36,9 +36,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4906522916460362}
-  - component: {fileID: 33898098866284914}
-  - component: {fileID: 65423850743519702}
-  - component: {fileID: 23154295791135006}
   m_Layer: 2
   m_Name: Journal
   m_TagString: Untagged
@@ -75,6 +72,24 @@ GameObject:
   - component: {fileID: 114297284127378940}
   m_Layer: 5
   m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1303361045055004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4619943856925298}
+  - component: {fileID: 33437397087612462}
+  - component: {fileID: 23302196211646020}
+  - component: {fileID: 95389176813666746}
+  m_Layer: 0
+  m_Name: DIARIO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,6 +156,19 @@ Transform:
   m_Father: {fileID: 4906522916460362}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4619943856925298
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303361045055004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: -0.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4906522916460362}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4906522916460362
 Transform:
   m_ObjectHideFlags: 1
@@ -148,21 +176,22 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1187699431894824}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.08, y: 1, z: 27.77}
+  m_LocalPosition: {x: 8.3, y: 0.19, z: 29.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224983234037100548}
   - {fileID: 4074280147925580}
   - {fileID: 4188245565462352}
+  - {fileID: 4619943856925298}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!23 &23154295791135006
+--- !u!23 &23302196211646020
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1187699431894824}
+  m_GameObject: {fileID: 1303361045055004}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -170,7 +199,10 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dabd7b07b7c2648358573ec6e29e1453, type: 2}
+  - {fileID: 2100000, guid: e5e1cd1eca62d49dd8f29b473436755e, type: 2}
+  - {fileID: 2100000, guid: 27ecc1b2336ce4fedb27de21831e578f, type: 2}
+  - {fileID: 2100000, guid: 94966cb4c78ca49c590e8abde609d655, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,7 +210,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedEditorRenderState: 3
@@ -189,25 +221,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33898098866284914
+--- !u!33 &33437397087612462
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1187699431894824}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65423850743519702
-BoxCollider:
+  m_GameObject: {fileID: 1303361045055004}
+  m_Mesh: {fileID: 4300000, guid: 53fca47404091438aa9ea9b7b46396bf, type: 3}
+--- !u!95 &95389176813666746
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1187699431894824}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_GameObject: {fileID: 1303361045055004}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Avatar: {fileID: 9000000, guid: 53fca47404091438aa9ea9b7b46396bf, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114085006637128896
 MonoBehaviour:
   m_ObjectHideFlags: 1
