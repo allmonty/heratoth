@@ -57,16 +57,19 @@ Shader "Portal Vision Shaders/Unity Standard Replacer"
 	{
 		Stencil
 		{
-			Ref 0
-			Comp NotEqual
-			Pass Replace
+			Ref 1
+			Comp Equal
+			Pass Zero
+			ZFail Replace
 		}
 
 		Tags {
 			"RenderType" = "Opaque"
+			"Queue" = "Geometry"
 			"PerformanceChecks"="False"
 		}
 
+		ZWrite On
 		ZTest Greater
 
 		LOD 300
@@ -230,15 +233,19 @@ Shader "Portal Vision Shaders/Unity Standard Replacer"
 	{
 		Stencil
 		{
-			Ref 0
-			Comp NotEqual
+			Ref 1
+			Comp Equal
+			Pass Zero
+			ZFail Replace
 		}
 
 		Tags {
 			"RenderType" = "Opaque"
+			"Queue" = "Geometry"
 			"PerformanceChecks"="False"
 		}
 
+		ZWrite On
 		ZTest Greater
 
 		LOD 150
