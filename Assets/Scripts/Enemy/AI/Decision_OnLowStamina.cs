@@ -12,10 +12,10 @@ public class Decision_OnLowStamina : Decision
 	private bool isLowOnStamina(StateController controller) {
 		var enemyController = controller as Enemy_StateController;
 
-		var characterStamina = enemyController.characterStatus.stamina;
-		if( characterStamina.stamina <= lowStamina ) {
-			return true;
-		}
+		// var characterStamina = enemyController.characterStatus.stamina;
+		// if( characterStamina.stamina <= lowStamina ) {
+		// 	return true;
+		// }
 		return false;
 	}
 }

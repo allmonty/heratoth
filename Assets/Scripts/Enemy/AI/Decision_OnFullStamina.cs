@@ -10,10 +10,10 @@ public class Decision_OnFullStamina : Decision
 	private bool isStaminaFull(StateController controller) {
 		var enemyController = controller as Enemy_StateController;
 
-		var characterStamina = enemyController.characterStatus.stamina;
-		if( characterStamina.isFull() ) {
-			return true;
-		}
+		// var characterStamina = enemyController.characterStatus.stamina;
+		// if( characterStamina.isFull() ) {
+		// 	return true;
+		// }
 		return false;
 	}
 }

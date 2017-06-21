@@ -12,11 +12,11 @@ public class Action_Attack : Action
 	}
 
 	private void attack(Enemy_StateController controller) {
-		controller.attackHandler.lightAttack();
+		//controller.attackHandler.lightAttack();
 	}
 
 	public override void Clear(StateController controller){
 		var enemyControl = controller as Enemy_StateController;
-        enemyControl.attackHandler.cutOffAttacking();
+        //enemyControl.attackHandler.cutOffAttacking();
 	}
 }
