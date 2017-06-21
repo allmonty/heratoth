@@ -47,9 +47,15 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void victory() {
-		victoryDisplay.SetActive(true);
-		StartCoroutine(loadSceneWithDelay(victoryGameSceneName, sceneTransitionTime));
-		playerStopper.stop();
+		if(numberOfItensCollected >= numberOfItensInScene){
+			victoryDisplay.SetActive(true);
+			StartCoroutine(loadSceneWithDelay(victoryGameSceneName, sceneTransitionTime));
+			playerStopper.stop();
+		} else {
+			victoryDisplay.SetActive(true);
+			StartCoroutine(loadSceneWithDelay(victoryGameSceneName, sceneTransitionTime));
+			playerStopper.stop();
+		}
 	}
 
 	public void changeScene(string sceneName) {
@@ -63,8 +69,5 @@ public class GameManager : MonoBehaviour
 
 	public void countItems(){
 		numberOfItensCollected++;
-		if(numberOfItensCollected >= numberOfItensInScene){
-			victory();
-		}
 	}
 }
