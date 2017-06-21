@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
 		playerStopper.stop();
 	}
 
+	public void changeScene(string sceneName) {
+		SceneManager.LoadScene(sceneName);
+	}
+
 	IEnumerator reloadCurrentScene(float waitTime) {
 		yield return new WaitForSeconds(waitTime);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);

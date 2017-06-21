@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Test_Stealth.unity
-    guid: 398b89152508949c0875f456ecad5e9a
+    path: Assets/_Scenes/MainScreen.unity
+    guid: f17b96c3ae07142d5b59a1b41150a9f5
+  - enabled: 1
+    path: Assets/_Scenes/Game.unity
+    guid: 00000000000000000000000000000000
