@@ -15,5 +15,8 @@ EditorBuildSettings:
     path: Assets/_Scenes/EndGameGood.unity
     guid: e242133c19b044ed6a373b6a2dfe49bb
   - enabled: 1
+    path: Assets/_Scenes/GameOver.unity
+    guid: 46535f848dbba47e2b7f1ce12e743018
+  - enabled: 1
     path: Assets/_Scenes/EndGameBad.unity
-    guid: 00000000000000000000000000000000
+    guid: 19fee125db0dd400db31c4fcbea5ad71

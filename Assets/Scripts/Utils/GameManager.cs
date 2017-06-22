@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour
 	public GameObject gameOverDisplay;
 	public string gameoverSceneName;
 	public GameObject victoryDisplay;
-	public string victoryGameSceneName;
+	public string goodVictoryGameScene;
+	public string badVictoryGameScene;
 
 	public float sceneTransitionTime;
 
@@ -49,11 +50,11 @@ public class GameManager : MonoBehaviour
 	public void victory() {
 		if(numberOfItensCollected >= numberOfItensInScene){
 			victoryDisplay.SetActive(true);
-			StartCoroutine(loadSceneWithDelay(victoryGameSceneName, sceneTransitionTime));
+			StartCoroutine(loadSceneWithDelay(goodVictoryGameScene, sceneTransitionTime));
 			playerStopper.stop();
 		} else {
 			victoryDisplay.SetActive(true);
-			StartCoroutine(loadSceneWithDelay(victoryGameSceneName, sceneTransitionTime));
+			StartCoroutine(loadSceneWithDelay(badVictoryGameScene, sceneTransitionTime));
 			playerStopper.stop();
 		}
 	}
