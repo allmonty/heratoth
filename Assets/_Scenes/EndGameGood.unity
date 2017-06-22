@@ -162,7 +162,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 29ae3ed282ac441dfa11f08b8b972a7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30f37c9bcc14a4fb7aab1fea4a183a1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -463,7 +463,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverDisplay: {fileID: 0}
+  gameoverSceneName: 
   victoryDisplay: {fileID: 0}
+  victoryGameSceneName: 
+  sceneTransitionTime: 0
+  numberOfItensInScene: 5
   playerStopper:
     playerInputReader: {fileID: 0}
     playerRigidBody: {fileID: 0}

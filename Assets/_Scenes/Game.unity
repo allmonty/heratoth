@@ -778,9 +778,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverDisplay: {fileID: 977352910}
-  gameoverSceneName: EndGameBad
+  gameoverSceneName: GameOver
   victoryDisplay: {fileID: 978450549}
-  victoryGameSceneName: EndGameGood
+  goodVictoryGameScene: EndGameGood
+  badVictoryGameScene: EndGameBad
   sceneTransitionTime: 3
   numberOfItensInScene: 6
   playerStopper:
