@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	[SerializeField] CharacterStatus charStats = null;
-
 	[SerializeField] float speed = 2.0F;
 	
 	[SerializeField] float dodgeSpeed = 10.0f;
@@ -41,42 +39,6 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		rigid.velocity = new Vector3 (moveDirection.x * speed, rigid.velocity.y, moveDirection.z * speed);
-	}
-
-	public void dodge(float dirX, float dirZ)
-	{
-		if (!charStats.stamina.isEnough(dodgeStaminaAmount)) return;
-
-		charStats.stamina.decrease(dodgeStaminaAmount);
-
-		Vector3 moveDirection = new Vector3();
-		if(dirX == 0.0f && dirZ == 0.0f){
-			moveDirection = transform.forward;
-		}
-		else{
-			moveDirection = processDirectionInRelationToCamera(dirX, 0.0f, dirZ);
-		}
-		if(moveDirection.magnitude > 1) moveDirection.Normalize();
-
-		Vector3 dodgeVelocity = new Vector3 (moveDirection.x * dodgeSpeed, rigid.velocity.y, moveDirection.z * dodgeSpeed);
-
-		isDodging = true;
-		StartCoroutine(doDodge(dodgeVelocity));
-		Invoke("stopDodging", dodgeDuration);
-	}
-
-	private void stopDodging()
-	{
-		isDodging = false;
-	}
-
-	private IEnumerator doDodge(Vector3 dodgeVelocity)
-	{
-		while(isDodging)
-		{
-			rigid.velocity = dodgeVelocity;
-			yield return null;
-		}
 	}
 
 	private Vector3 processDirectionInRelationToCamera(float x, float y, float z)
