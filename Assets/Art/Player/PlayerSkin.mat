@@ -81,6 +81,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 0.79959434, b: 0.61764705, a: 1}
-    - _EdgeColor: {r: 0.8308824, g: 0.085531995, b: 0.74863714, a: 1}
+    - _EdgeColor: {r: 0.8235294, g: 0.68329555, b: 0.3814879, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
