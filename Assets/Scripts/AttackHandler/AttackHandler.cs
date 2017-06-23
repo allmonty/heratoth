@@ -42,12 +42,16 @@ public class AttackHandler : MonoBehaviour {
 
 	public void doDamage(CharacterStatus enemy)
 	{
+		Debug.Log(transform.name + " did damage in " + enemy.transform.name);
 		enemy.life.decrease(currentAtkStats.damage);
+		attackBox.SetActive(false);
 	}
 
-	public void endAnimations()
+	public void cutOffAttacking()
 	{
-		anim.SetInteger(animationParam, 0);
+		endAttack();
+		CancelInvoke("activateAttack");
+		CancelInvoke("endAttack");
 	}
 
 	private void startAttack()
