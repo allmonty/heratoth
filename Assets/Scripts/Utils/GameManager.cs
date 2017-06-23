@@ -21,7 +21,15 @@ public class GameManager : MonoBehaviour
 	static public GameManager instance = null;
 
 	public GameObject gameOverDisplay;
+	public string gameoverSceneName;
 	public GameObject victoryDisplay;
+	public string goodVictoryGameScene;
+	public string badVictoryGameScene;
+
+	public float sceneTransitionTime;
+
+	public int numberOfItensInScene = 5;
+	private int numberOfItensCollected = 0;
 
 	public PlayerStopper playerStopper;
 
@@ -35,18 +43,32 @@ public class GameManager : MonoBehaviour
 
 	public void gameOver() {
 		gameOverDisplay.SetActive(true);
-		StartCoroutine(reloadCurrentScene(5));
+		StartCoroutine(loadSceneWithDelay(gameoverSceneName, sceneTransitionTime));
 		playerStopper.stop();
 	}
 
 	public void victory() {
-		victoryDisplay.SetActive(true);
-		StartCoroutine(reloadCurrentScene(5));
-		playerStopper.stop();
+		if(numberOfItensCollected >= numberOfItensInScene){
+			victoryDisplay.SetActive(true);
+			StartCoroutine(loadSceneWithDelay(goodVictoryGameScene, sceneTransitionTime));
+			playerStopper.stop();
+		} else {
+			victoryDisplay.SetActive(true);
+			StartCoroutine(loadSceneWithDelay(badVictoryGameScene, sceneTransitionTime));
+			playerStopper.stop();
+		}
 	}
 
-	IEnumerator reloadCurrentScene(float waitTime) {
+	public void changeScene(string sceneName) {
+		SceneManager.LoadScene(sceneName);
+	}
+
+	IEnumerator loadSceneWithDelay(string sceneName, float waitTime) {
 		yield return new WaitForSeconds(waitTime);
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		SceneManager.LoadScene(sceneName);
+	}
+
+	public void countItems(){
+		numberOfItensCollected++;
 	}
 }

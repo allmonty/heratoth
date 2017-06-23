@@ -11,6 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9903828c687b4bdeae823270da2fc19, type: 3}
   m_Name: TargetSpotDecision
   m_EditorClassIdentifier: 
-  lookRange: 6.4
-  lookMaxAngle: 35
-  sphereCastRadius: 1
+  lookRange: 15
+  lookMaxAngle: 22
