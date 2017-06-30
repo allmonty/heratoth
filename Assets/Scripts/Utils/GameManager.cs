@@ -20,11 +20,13 @@ public class GameManager : MonoBehaviour
 {
 	static public GameManager instance = null;
 
-	public GameObject gameOverDisplay;
-	public string gameoverSceneName;
-	public GameObject victoryDisplay;
-	public string goodVictoryGameScene;
-	public string badVictoryGameScene;
+	public GameObject gameOverDisplay = null;
+	public string gameoverSceneName = null;
+	public AudioSource lostSound = null;
+	public GameObject victoryDisplay = null;
+	public string goodVictoryGameScene = null;
+	public string badVictoryGameScene = null;
+	public AudioSource winSound = null;
 
 	public float sceneTransitionTime;
 
@@ -42,12 +44,14 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void gameOver() {
+		lostSound.Play();
 		gameOverDisplay.SetActive(true);
 		StartCoroutine(loadSceneWithDelay(gameoverSceneName, sceneTransitionTime));
 		playerStopper.stop();
 	}
 
 	public void victory() {
+		winSound.Play();
 		if(numberOfItensCollected >= numberOfItensInScene){
 			victoryDisplay.SetActive(true);
 			StartCoroutine(loadSceneWithDelay(goodVictoryGameScene, sceneTransitionTime));
