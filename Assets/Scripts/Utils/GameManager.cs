@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 	public float sceneTransitionTime;
 
 	public int numberOfItensInScene = 5;
-	private int numberOfItensCollected = 0;
+	public int numberOfItensCollected = 0;
 
 	public PlayerStopper playerStopper;
 
