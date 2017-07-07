@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 	public string goodVictoryGameScene = null;
 	public string badVictoryGameScene = null;
 	public AudioSource winSound = null;
+	public AudioSource badWinSound = null;
 
 	public float sceneTransitionTime;
 
@@ -51,12 +52,13 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void victory() {
-		winSound.Play();
 		if(numberOfItensCollected >= numberOfItensInScene){
+			winSound.Play();
 			victoryDisplay.SetActive(true);
 			StartCoroutine(loadSceneWithDelay(goodVictoryGameScene, sceneTransitionTime));
 			playerStopper.stop();
 		} else {
+			badWinSound.Play();
 			victoryDisplay.SetActive(true);
 			StartCoroutine(loadSceneWithDelay(badVictoryGameScene, sceneTransitionTime));
 			playerStopper.stop();
