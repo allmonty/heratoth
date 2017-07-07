@@ -162,7 +162,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 761fd6b521cb54d6d8db4bcc089a45ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91b351221a6154b7589163e4b66ed0e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -308,6 +308,11 @@ Prefab:
     - target: {fileID: 4163869961734300, guid: 1779ef88a496091429dc099d9cad3fa2, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 82250717655306358, guid: 1779ef88a496091429dc099d9cad3fa2,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1779ef88a496091429dc099d9cad3fa2, type: 2}
@@ -491,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e9574bac63f48f98d630bd55c41d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Game
+  sceneName: MainMenu
   inputButton: Fire1
 --- !u!114 &1070653361
 MonoBehaviour:
