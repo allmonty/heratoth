@@ -18,21 +18,13 @@ public class PivotMovement : MonoBehaviour {
 	void LateUpdate ()
 	{
 		var input = Input.GetAxis(rotationInput);
-		if(input != 0f)
-		{
-			if(currentAngle >= -maxAngle && currentAngle <= maxAngle){
-				currentAngle += input * tiltSpeed * Time.deltaTime;
-				transform.RotateAround(pivot.position, pivot.up, input * tiltSpeed * Time.deltaTime);
-			}
-		}
-		else if(currentAngle != 0f)
-		{
-			float iteration = tiltBackSpeed * Time.deltaTime;
-			float iterationToZero = -1 * Mathf.Sign(currentAngle) * iteration;
-			currentAngle += iterationToZero;
-			transform.RotateAround(pivot.position, pivot.up, iterationToZero);
-			
-			if(currentAngle >= -iteration && currentAngle <= iteration) currentAngle = 0f;
+
+		if(input > 0f && currentAngle < maxAngle) {
+			currentAngle += input * tiltSpeed * Time.deltaTime;
+			transform.RotateAround(pivot.position, pivot.up, input * tiltSpeed * Time.deltaTime);
+		} else if(input < 0f && currentAngle > -maxAngle) {
+			currentAngle += input * tiltSpeed * Time.deltaTime;
+			transform.RotateAround(pivot.position, pivot.up, input * tiltSpeed * Time.deltaTime);
 		}
 	}
 }
