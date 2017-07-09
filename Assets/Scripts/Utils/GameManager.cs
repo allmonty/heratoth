@@ -77,4 +77,8 @@ public class GameManager : MonoBehaviour
 	public void countItems(){
 		numberOfItensCollected++;
 	}
+
+	public void exitGame(){
+		Application.Quit();
+	}
 }
