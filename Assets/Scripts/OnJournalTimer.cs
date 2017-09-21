@@ -8,8 +8,11 @@ public class OnJournalTimer : MonoBehaviour {
 	bool tracking = false;
 	float timer = 0f;
 	float totalTime = 0f;
+	
+	public string eventName = "teste";
+    public bool execute = false;
 
-	public void startTimer() {
+    public void startTimer() {
 		tracking = true;
 		timer += Time.deltaTime;
 	}
@@ -21,20 +24,24 @@ public class OnJournalTimer : MonoBehaviour {
 	}
 
 	public void sendEvent(string eventName) {
-		Debug.Log("Send event: " + eventName);
-		
-		Analytics.CustomEvent(eventName);
-		
-		// Analytics.CustomEvent(eventName, new Dictionary<string, object>
-		// {
-		// 	{ "Time", totalTime }
-		// });
+		var analyticsStatus = Analytics.CustomEvent(eventName, new Dictionary<string, object>
+		{
+			{ "Time", totalTime }
+		});
+
+		Debug.Log("Event: " + eventName + " | Status: " + analyticsStatus);
 	}
 
 	void Update()
 	{
 		if (tracking) {
 			timer += Time.deltaTime;
+		}
+
+		if(execute)
+		{
+			sendEvent(eventName);
+			execute = false;
 		}
 	}
 }
