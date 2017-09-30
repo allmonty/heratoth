@@ -8420,6 +8420,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4234371948034350, guid: f7f67a007edd34073857b8871cadb5a2,
     type: 2}
   m_PrefabInternal: {fileID: 1189954752}
+--- !u!1001 &1202679865
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4443344235116758, guid: c5f0f38eb6c415c44aedd1b577bb1ba2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443344235116758, guid: c5f0f38eb6c415c44aedd1b577bb1ba2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443344235116758, guid: c5f0f38eb6c415c44aedd1b577bb1ba2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443344235116758, guid: c5f0f38eb6c415c44aedd1b577bb1ba2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443344235116758, guid: c5f0f38eb6c415c44aedd1b577bb1ba2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443344235116758, guid: c5f0f38eb6c415c44aedd1b577bb1ba2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443344235116758, guid: c5f0f38eb6c415c44aedd1b577bb1ba2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443344235116758, guid: c5f0f38eb6c415c44aedd1b577bb1ba2, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c5f0f38eb6c415c44aedd1b577bb1ba2, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1207244854 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400082, guid: 3b715de1c59f9f8438d173bbe9779cbd, type: 3}
