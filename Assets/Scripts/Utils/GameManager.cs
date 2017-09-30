@@ -52,12 +52,17 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void victory() {
+
+		GameFinishedTracker endGameTracker = GameObject.Find("GameFinishedTracker Analytics").GetComponent<GameFinishedTracker>();
+
 		if(numberOfItensCollected >= numberOfItensInScene){
+			endGameTracker.triggerGoodEndGame();
 			winSound.Play();
 			victoryDisplay.SetActive(true);
 			StartCoroutine(loadSceneWithDelay(goodVictoryGameScene, sceneTransitionTime));
 			playerStopper.stop();
 		} else {
+			endGameTracker.triggerBadEndGame();
 			badWinSound.Play();
 			victoryDisplay.SetActive(true);
 			StartCoroutine(loadSceneWithDelay(badVictoryGameScene, sceneTransitionTime));

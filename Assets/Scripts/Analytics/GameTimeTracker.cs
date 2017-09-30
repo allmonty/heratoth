@@ -41,33 +41,28 @@ public class GameTimeTracker : MonoBehaviour {
 	}
 
 	void OnApplicationQuit(){
-		
-		Debug.Log("esfsa");
 
-		Analytics.CustomEvent("Session Duration", new Dictionary<string, object>
+		Debug.Log("Session Duration Event " + Analytics.CustomEvent("Session Duration", new Dictionary<string, object>
 		{
 			{ "Duration", Time.time }
-		});
+		}));
 
 		float totalPlayDuration = 0.0f;
 
 		foreach (float duration in playTimes)
 		{
-			Analytics.CustomEvent("Run Duration", new Dictionary<string, object>
+			Debug.Log("Run Duration Event " + Analytics.CustomEvent("Run Duration", new Dictionary<string, object>
 			{
 				{ "Duration", duration }
-			});
+			}));
 
 			totalPlayDuration += duration;
 		}
 
-		Debug.Log(Analytics.CustomEvent("Total Play Duration", new Dictionary<string, object>
+		Debug.Log("Total Play Duration Event " + Analytics.CustomEvent("Total Play Duration", new Dictionary<string, object>
 		{
 			{ "Duration", totalPlayDuration },
 			{ "Runs Count", playTimes.Count }
 		}));
-
-		Debug.Log("cabo");
 	}
-
 }
