@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using System.Dynamic;
 
 [ExecuteInEditMode]
 public class PositionDrawer : MonoBehaviour {
@@ -14,13 +15,15 @@ public class PositionDrawer : MonoBehaviour {
 	void Update() {
 		if(runDrawer)
 		{
-			string path = Application.persistentDataPath + "/playerPosition.json";
+			string path = Application.persistentDataPath + "/playerPosition2.json";
 
 			StreamReader reader = new StreamReader(path);
 			
-			PlayerPositions playerPos = JsonUtility.FromJson<PlayerPositions>(reader.ReadToEnd());
+			Dictionary<string, object> data = JsonUtility.FromJson<Dictionary<string, object>>(reader.ReadToEnd());
 			
-			positions = new List<PlayerPosition>(playerPos.positions);
+			Debug.Log("Teste: " + data);
+
+			positions = new List<PlayerPosition>(data["positions"] as List<PlayerPosition>);
 
 			reader.Close();
 			runDrawer = false;
