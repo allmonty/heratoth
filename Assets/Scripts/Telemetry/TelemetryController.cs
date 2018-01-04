@@ -28,4 +28,16 @@ public class TelemetryController {
 		
 		playerInfo.addRound(currentRound);
 	}
+
+	public static void setPlayerInfo(string key, object value) {
+		playerInfo.setInfo(key, value);
+	}
+
+	public static object getPlayerInfo(string key) {
+		return playerInfo.getInfo(key);
+	}
+
+	public static bool containsPlayerInfo(string key) {
+		return playerInfo.containsInfo(key);
+	}
 }

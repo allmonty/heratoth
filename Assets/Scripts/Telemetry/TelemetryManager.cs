@@ -55,6 +55,8 @@ public class TelemetryManager : MonoBehaviour {
 			TelemetryController.endRound();
 		}
 
+		TelemetryController.setPlayerInfo("Session Duration", Time.realtimeSinceStartup);
+
 		Debug.Log(JsonConvert.SerializeObject(TelemetryController.getPlayerInfo()));
 	}
 }
