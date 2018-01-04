@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Dynamic;
 using Newtonsoft.Json;
 using UnityEngine;
 
-public class TelemetryNode {
+public class TelemetryNode : ISerializable {
 
 	TelemetryNodeType nodeType;
 	string name;
@@ -35,17 +36,18 @@ public class TelemetryNode {
 	public Vector3 getPosition() { return this.position; }
 	public ExpandoObject getInfo() { return this.info; }
 
-	public string toJson() {
-		dynamic nodeJson = new ExpandoObject();
-		nodeJson.type = this.nodeType.Value;
-        nodeJson.name = this.name;
-        nodeJson.time = this.time;
-		nodeJson.position = new ExpandoObject();
-			nodeJson.position.x = this.position.x;
-			nodeJson.position.y = this.position.y;
-			nodeJson.position.z = this.position.z;
-		nodeJson.info = this.info;
+	public void GetObjectData(SerializationInfo info, StreamingContext context)
+	{
+		info.AddValue("Type", this.nodeType.Value, typeof(string));
+		info.AddValue("Name", this.name, typeof(string));
+		info.AddValue("Time", this.time, typeof(float));
+		
+		dynamic position = new ExpandoObject();
+			position.x = this.position.x;
+			position.y = this.position.y;
+			position.z = this.position.z;
+		info.AddValue("Position", position, typeof(ExpandoObject));
 
-		return JsonConvert.SerializeObject(nodeJson);
+		info.AddValue("Info", this.info, typeof(ExpandoObject));		
 	}
 }

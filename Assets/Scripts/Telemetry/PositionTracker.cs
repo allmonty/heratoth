@@ -16,36 +16,46 @@ public class PositionTracker : MonoBehaviour {
 	}
 
 	void track() {
-		positionsTracked.Add(transform.position);
-	}
-
-	void OnApplicationQuit() {
-        StreamWriter writer = new StreamWriter(Application.persistentDataPath + "/playerPosition2.json", true);
-		
-		Dictionary<string, object> data = new Dictionary<string, object>();
-
-//================================================================================
+		//positionsTracked.Add(transform.position);
 		dynamic test = new ExpandoObject();
-		test.damage = 25;
-		test.target = "enemy";
-		
+
 		TelemetryNode teste = new TelemetryNode(
 			TelemetryNodeType.Agent,
-			"Player",
+			"Player shiauf",
 			transform.position,
 			test
 		);
 
-		Debug.Log(teste.toJson());
-		DBSaver.savePlayerData(teste.toJson());
+		TelemetryController.addNode(teste);
+	}
 
-		TelemetryNode teste2 = new TelemetryNode(
-            TelemetryNodeType.Agent,
-            "Player",
-            transform.position
-        );
+	void OnApplicationQuit() {
+//         StreamWriter writer = new StreamWriter(Application.persistentDataPath + "/playerPosition2.json", true);
+		
+// 		Dictionary<string, object> data = new Dictionary<string, object>();
 
-        Debug.Log(teste2.toJson());
+// //================================================================================
+// 		dynamic test = new ExpandoObject();
+// 		test.damage = 25;
+// 		test.target = "enemy";
+		
+// 		TelemetryNode teste = new TelemetryNode(
+// 			TelemetryNodeType.Agent,
+// 			"Player",
+// 			transform.position,
+// 			test
+// 		);
+
+// 		Debug.Log(teste.toJson());
+// 		DBSaver.savePlayerData(teste.toJson());
+
+// 		TelemetryNode teste2 = new TelemetryNode(
+//             TelemetryNodeType.Agent,
+//             "Player",
+//             transform.position
+//         );
+
+//         Debug.Log(teste2.toJson());
 
 		// dynamic test = new ExpandoObject();
 		// test.nome = "Allan";
