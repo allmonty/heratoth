@@ -11,6 +11,8 @@ public class TelemetryManager : MonoBehaviour {
 
 	public List<string> playableScenes = new List<string>();
 
+	bool isRoundRunning = false;
+
 	void Awake() {
 		if(instance == null) {
 			instance = this;
@@ -28,6 +30,7 @@ public class TelemetryManager : MonoBehaviour {
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)	{
 		if(playableScenes.Contains(scene.name)) {
+			this.isRoundRunning = true;
 			Debug.Log("Loaded " + scene.name);
 			TelemetryController.newRound(scene.name);
 		}
@@ -35,6 +38,7 @@ public class TelemetryManager : MonoBehaviour {
 
 	void OnSceneUnloaded(Scene scene)	{
 		if(playableScenes.Contains(scene.name)) {
+			this.isRoundRunning = false;
 			Debug.Log("Unloaded " + scene.name);
 			TelemetryController.endRound();
 		}
@@ -47,6 +51,10 @@ public class TelemetryManager : MonoBehaviour {
 	}
 
 	void OnApplicationQuit() {
+		if(this.isRoundRunning) {
+			TelemetryController.endRound();
+		}
+
 		Debug.Log(JsonConvert.SerializeObject(TelemetryController.getPlayerInfo()));
 	}
 }
