@@ -21,7 +21,7 @@ public class PositionTracker : MonoBehaviour {
 
 		TelemetryNode teste = new TelemetryNode(
 			TelemetryNodeType.Agent,
-			"Player shiauf",
+			"Player Position",
 			transform.position,
 			test
 		);

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 using UnityEngine.Analytics;
 
@@ -19,13 +20,17 @@ public class OnJournalTimer : MonoBehaviour {
 		timer = 0f;
 
 		if (tracking) {
-			var eventName = "Reading Time of " + transform.parent.name;
-			var analyticsStatus = Analytics.CustomEvent(eventName, new Dictionary<string, object>
-			{
-				{ "Reading Time", totalTime }
-			});
+			dynamic additionalInfo = new ExpandoObject();
+			additionalInfo.readingTime = totalTime;
 
-			Debug.Log("Event: " + eventName + " | Status: " + analyticsStatus);
+			TelemetryNode journalNode = new TelemetryNode(
+				TelemetryNodeType.Activity,
+				transform.parent.name + " Reading",
+				transform.position,
+				additionalInfo
+			);			
+		
+			TelemetryController.addNode(journalNode);
 		}
 
 		tracking = false;

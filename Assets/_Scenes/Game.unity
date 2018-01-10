@@ -12881,6 +12881,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114049021294576700, guid: 11d73cc89d156224c9c0d42197d49918,
+        type: 2}
+      propertyPath: trackingDelay
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11d73cc89d156224c9c0d42197d49918, type: 2}
   m_IsPrefabParent: 0
