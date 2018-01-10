@@ -7,6 +7,23 @@ using UnityEngine.Events;
 public class Action_TriggerGameOver : Action
 {
 	public override void Init(StateController controller) {
+		if(TelemetryController.containsPlayerInfo("Deaths")) {
+			int gameOverCounter = (int) TelemetryController.getPlayerInfo("Deaths");
+			TelemetryController.setPlayerInfo("Deaths", gameOverCounter + 1 );
+		} else {
+			TelemetryController.setPlayerInfo("Deaths", 1);
+		}
+
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+		TelemetryNode deathNode = new TelemetryNode(
+			TelemetryNodeType.Agent,
+			"Player Spotted",
+			player.transform.position
+		);
+
+		TelemetryController.addNode(deathNode);
+
 		GameManager.instance.gameOver();
 	}
 
