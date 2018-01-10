@@ -23,11 +23,24 @@ public class GameFinishedTracker : MonoBehaviour {
 	public void triggerGoodEndGame()
 	{
 		goodEndsCount++;
+		if(TelemetryController.containsPlayerInfo("Good Endings")) {
+			int goodEndsCount = (int) TelemetryController.getPlayerInfo("Good Endings");
+			TelemetryController.setPlayerInfo("Good Endings", badEndsCount + 1 );
+		} else {
+			TelemetryController.setPlayerInfo("Good Endings", 1);
+		}
+
 	}
 
 	public void triggerBadEndGame()
 	{
 		badEndsCount++;
+		if(TelemetryController.containsPlayerInfo("Bad Endings")) {
+			int badEndsCount = (int) TelemetryController.getPlayerInfo("Bad Endings");
+			TelemetryController.setPlayerInfo("Bad Endings", badEndsCount + 1 );
+		} else {
+			TelemetryController.setPlayerInfo("Bad Endings", 1);
+		}
 	}
 
 	void OnApplicationQuit(){
