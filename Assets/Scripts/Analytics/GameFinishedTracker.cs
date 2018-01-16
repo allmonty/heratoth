@@ -29,15 +29,15 @@ public class GameFinishedTracker : MonoBehaviour {
 			player.transform.position
 		);
 
-		TelemetryController.addNode(relicInteraction);
+		TelemetryCore.addNode(relicInteraction);
 	}
 
 	void registerEnding(string endingKey) {
-		if(TelemetryController.containsPlayerInfo(endingKey)) {
-			int endsCounter = (int) TelemetryController.getPlayerInfo(endingKey);
-			TelemetryController.setPlayerInfo(endingKey, endsCounter + 1 );
+		if(TelemetryCore.containsPlayerInfo(endingKey)) {
+			int endsCounter = (int) TelemetryCore.getPlayerInfo(endingKey);
+			TelemetryCore.setPlayerInfo(endingKey, endsCounter + 1 );
 		} else {
-			TelemetryController.setPlayerInfo(endingKey, 1);
+			TelemetryCore.setPlayerInfo(endingKey, 1);
 		}
 	}
 

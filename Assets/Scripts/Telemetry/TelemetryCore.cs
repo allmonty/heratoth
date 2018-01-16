@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 
-public class TelemetryController {
+public class TelemetryCore {
 	
 	static Telemetry_PlayerInfo playerInfo = new Telemetry_PlayerInfo();
+	static ExpandoObject sessionsData = null;
 	
 	static Telemetry_RoundInfo currentRound = null;
 	static float roundInitialTime = 0f;
@@ -39,5 +41,17 @@ public class TelemetryController {
 
 	public static bool containsPlayerInfo(string key) {
 		return playerInfo.containsInfo(key);
+	}
+
+	public static void setSessionsData(ExpandoObject data) {
+		TelemetryCore.sessionsData = data;
+	}
+
+	public static ExpandoObject getSessionsData() {
+		return TelemetryCore.sessionsData;
+	}
+
+	public static void loadSessionsData(string key) {
+		DBHandler.loadSessionsData(key);
 	}
 }

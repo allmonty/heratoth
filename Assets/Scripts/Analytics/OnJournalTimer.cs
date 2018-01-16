@@ -30,7 +30,7 @@ public class OnJournalTimer : MonoBehaviour {
 				additionalInfo
 			);			
 		
-			TelemetryController.addNode(journalNode);
+			TelemetryCore.addNode(journalNode);
 		}
 
 		tracking = false;

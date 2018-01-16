@@ -32,7 +32,7 @@ public class TelemetryManager : MonoBehaviour {
 		if(playableScenes.Contains(scene.name)) {
 			this.isRoundRunning = true;
 			Debug.Log("Loaded " + scene.name);
-			TelemetryController.newRound(scene.name);
+			TelemetryCore.newRound(scene.name);
 		}
 	}
 
@@ -40,7 +40,7 @@ public class TelemetryManager : MonoBehaviour {
 		if(playableScenes.Contains(scene.name)) {
 			this.isRoundRunning = false;
 			Debug.Log("Unloaded " + scene.name);
-			TelemetryController.endRound();
+			TelemetryCore.endRound();
 		}
 	}
 
@@ -52,11 +52,12 @@ public class TelemetryManager : MonoBehaviour {
 
 	void OnApplicationQuit() {
 		if(this.isRoundRunning) {
-			TelemetryController.endRound();
+			TelemetryCore.endRound();
 		}
 
-		TelemetryController.setPlayerInfo("Session Duration", Time.realtimeSinceStartup);
+		TelemetryCore.setPlayerInfo("Session Duration", Time.realtimeSinceStartup);
 
-		Debug.Log(JsonConvert.SerializeObject(TelemetryController.getPlayerInfo()));
+		// DBHandler.saveSessionsData(JsonConvert.SerializeObject(TelemetryCore.getPlayerInfo()));
+		// Debug.Log(JsonConvert.SerializeObject(TelemetryCore.getPlayerInfo()));
 	}
 }

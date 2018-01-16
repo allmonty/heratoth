@@ -26,7 +26,7 @@ public class PositionTracker : MonoBehaviour {
 			test
 		);
 
-		TelemetryController.addNode(teste);
+		TelemetryCore.addNode(teste);
 	}
 
 	void OnApplicationQuit() {
