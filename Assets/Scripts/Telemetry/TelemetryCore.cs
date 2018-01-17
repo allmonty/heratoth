@@ -6,7 +6,7 @@ using UnityEngine;
 public class TelemetryCore {
 	
 	static Telemetry_PlayerInfo playerInfo = new Telemetry_PlayerInfo();
-	static ExpandoObject sessionsData = null;
+	static string sessionsData = null;
 	
 	static Telemetry_RoundInfo currentRound = null;
 	static float roundInitialTime = 0f;
@@ -43,11 +43,11 @@ public class TelemetryCore {
 		return playerInfo.containsInfo(key);
 	}
 
-	public static void setSessionsData(ExpandoObject data) {
+	public static void setSessionsData(string data) {
 		TelemetryCore.sessionsData = data;
 	}
 
-	public static ExpandoObject getSessionsData() {
+	public static string getSessionsData() {
 		return TelemetryCore.sessionsData;
 	}
 

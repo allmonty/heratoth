@@ -36,8 +36,7 @@ public class DBFirebase{
 				}
 				else if (task.IsCompleted) {
 					DataSnapshot snapshot = task.Result;
-					dynamic jsonData = JsonConvert.DeserializeObject<ExpandoObject>(snapshot.GetRawJsonValue());
-					TelemetryCore.setSessionsData(jsonData);
+					TelemetryCore.setSessionsData(snapshot.GetRawJsonValue());
 				}
 			});
 	}
