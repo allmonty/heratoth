@@ -14,8 +14,9 @@ public class Telemetry_RoundInfo : ISerializable {
 		this.duration = 0f;
 	}
 
-	public void addNode(TelemetryNode node) {
+	public int addNode(TelemetryNode node) {
 		this.nodes.Add(node);
+		return this.nodes.Count - 1;
 	}
 
 	public void setDuration(float duration) {

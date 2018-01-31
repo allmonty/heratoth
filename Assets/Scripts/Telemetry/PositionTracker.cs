@@ -11,22 +11,24 @@ public class PositionTracker : MonoBehaviour {
 
 	List<Vector3> positionsTracked = new List<Vector3>();
 
+	int lastPositionId = -1;
+
 	void Start () {
 		InvokeRepeating("track", 0f, trackingDelay);		
 	}
 
 	void track() {
-		//positionsTracked.Add(transform.position);
-		dynamic test = new ExpandoObject();
-
-		TelemetryNode teste = new TelemetryNode(
-			TelemetryNodeType.Agent,
+		TelemetryNode playerPosition = new TelemetryNode(
+			TelemetryNodeType.Atomic,
 			"Player Position",
-			transform.position,
-			test
+			transform.position
 		);
 
-		TelemetryCore.addNode(teste);
+		if(lastPositionId != -1) {
+			playerPosition.setLink(lastPositionId);
+		}
+
+		lastPositionId = TelemetryCore.addNode(playerPosition);
 	}
 
 	void OnApplicationQuit() {

@@ -11,6 +11,9 @@ public class Telemetry_Visualizer : MonoBehaviour {
 	public string sceneName = "";
 	public bool loadSceneName = true;
 	public bool fetchInfo = false;
+	public GameObject atomicModel;
+	public GameObject singleEventModel;
+	public GameObject chainEventModel;
 	
 	public int roundsCount = 0;
 	public int selectedRound = 0;
@@ -18,12 +21,9 @@ public class Telemetry_Visualizer : MonoBehaviour {
 	List<JToken> roundNodes = new List<JToken>(); 
 	bool isReading = false;
 
-	LineRenderer lineRenderer = null;
-
 	void Start() {
 		if(this.loadSceneName)
 			this.sceneName = SceneManager.GetActiveScene().name;
-		this.lineRenderer = transform.GetComponent<LineRenderer>();
 	}
 
 	void Update () {
@@ -48,34 +48,50 @@ public class Telemetry_Visualizer : MonoBehaviour {
 		foreach (var session in info) {
 			foreach (var round in session.Value["Rounds"]) {
 				if (round["Scene Name"].Value<string>() == this.sceneName) {
-					Debug.Log(round);
 					roundNodes.Add(round["Nodes"]);
 				}
 			}
 
 			roundsCount = roundNodes.Count;
 			//Heroic Line of Master Access!!!
-			// Debug.Log(session.Value["Rounds"][0]["Nodes"]); //o/
 		}
-		Debug.Log(roundNodes);
 	}
 
 	void render() {
-		List<Vector3> positions = new List<Vector3>();
-		foreach(var node in roundNodes[selectedRound]) {
-			Debug.Log(node["Position"]);
-			if(node["Name"].Value<string>() == "Player Position" &&
-				node["Type"].Value<string>() == "Agent"){
-				Vector3 position = new Vector3(
-					node["Position"]["x"].Value<float>(),
-					node["Position"]["y"].Value<float>(),
-					node["Position"]["z"].Value<float>()
-				);
-				positions.Add(position);
+		foreach(var node in roundNodes[selectedRound])
+		{
+			Vector3 position = positionVectorFromNode(node);
+
+			GameObject instantiatedNode = null;
+
+			if(node["Type"].Value<string>() == "Atomic")
+			{
+				instantiatedNode = Instantiate(atomicModel, position, Quaternion.Euler(Vector3.up));
+			}
+			else if(node["Type"].Value<string>() == "Single Event") 
+			{
+				instantiatedNode = Instantiate(singleEventModel, position, Quaternion.Euler(Vector3.up));
+			}
+			else if(node["Type"].Value<string>() == "Chain Event") 
+			{
+				instantiatedNode = Instantiate(chainEventModel, position, Quaternion.Euler(Vector3.up));
+			}
+
+			int linkId = node["Link"].Value<int>();
+			if(linkId != -1) {
+				LineRenderer lineRenderer = instantiatedNode.GetComponent<LineRenderer>();
+				Vector3 linkPosition = positionVectorFromNode(roundNodes[selectedRound][linkId]);
+				Vector3[] positionsToLink = {position, linkPosition};				
+				lineRenderer.SetPositions(positionsToLink);
 			}
 		}
+	}
 
-		lineRenderer.positionCount = positions.Count;
-		lineRenderer.SetPositions(positions.ToArray());
+	Vector3 positionVectorFromNode(JToken node) {
+		return new Vector3(
+				node["Position"]["x"].Value<float>(),
+				node["Position"]["y"].Value<float>(),
+				node["Position"]["z"].Value<float>()
+			);
 	}
 }

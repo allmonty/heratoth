@@ -5,7 +5,7 @@ public class TelemetryNodeType
 
     private TelemetryNodeType(string value) { Value = value; }
 
-    public static TelemetryNodeType Entity { get { return new TelemetryNodeType("Entity"); } }
-    public static TelemetryNodeType Activity { get { return new TelemetryNodeType("Activity"); } }
-    public static TelemetryNodeType Agent { get { return new TelemetryNodeType("Agent"); } }
+    public static TelemetryNodeType Atomic { get { return new TelemetryNodeType("Atomic"); } }
+    public static TelemetryNodeType SingleEvent { get { return new TelemetryNodeType("Single Event"); } }
+    public static TelemetryNodeType ChainEvent { get { return new TelemetryNodeType("Chain Event"); } }
 }

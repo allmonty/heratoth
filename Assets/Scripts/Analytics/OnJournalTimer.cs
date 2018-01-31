@@ -24,7 +24,7 @@ public class OnJournalTimer : MonoBehaviour {
 			additionalInfo.readingTime = totalTime;
 
 			TelemetryNode journalNode = new TelemetryNode(
-				TelemetryNodeType.Activity,
+				TelemetryNodeType.SingleEvent,
 				transform.parent.name + " Reading",
 				transform.position,
 				additionalInfo

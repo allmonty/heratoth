@@ -20,8 +20,8 @@ public class TelemetryCore {
 		roundInitialTime = Time.realtimeSinceStartup;
 	}
 
-	public static void addNode(TelemetryNode node){
-		currentRound.addNode(node);
+	public static int addNode(TelemetryNode node){
+		return currentRound.addNode(node);
 	}
 
 	public static void endRound(){

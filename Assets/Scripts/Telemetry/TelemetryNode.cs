@@ -10,11 +10,13 @@ public class TelemetryNode : ISerializable {
 	TelemetryNodeType nodeType;
 	string name;
 	float time;
+	int link;
 	Vector3 position;
 	ExpandoObject info;
 
 	public TelemetryNode(TelemetryNodeType nodeType, string name, Vector3 position, ExpandoObject info) {
 		this.nodeType = nodeType;
+		this.link = -1;
 		this.name = name;
 		this.position = position;
 		this.info = info;
@@ -23,11 +25,12 @@ public class TelemetryNode : ISerializable {
 
 	public TelemetryNode(TelemetryNodeType nodeType, string name, Vector3 position)
     {
-        this.nodeType = nodeType;
-        this.name = name;
-        this.position = position;
-        this.time = Time.realtimeSinceStartup;
-		this.info = new ExpandoObject();
+			this.nodeType = nodeType;
+			this.link = -1;
+			this.name = name;
+			this.position = position;
+			this.time = Time.realtimeSinceStartup;
+			this.info = new ExpandoObject();
     }
 
 	public TelemetryNodeType getType() { return this.nodeType; }
@@ -36,9 +39,14 @@ public class TelemetryNode : ISerializable {
 	public Vector3 getPosition() { return this.position; }
 	public ExpandoObject getInfo() { return this.info; }
 
+	public void setLink(int nodeId) { 
+		this.link = nodeId;
+	}
+
 	public void GetObjectData(SerializationInfo info, StreamingContext context)
 	{
 		info.AddValue("Type", this.nodeType.Value, typeof(string));
+		info.AddValue("Link", this.link, typeof(int));
 		info.AddValue("Name", this.name, typeof(string));
 		info.AddValue("Time", this.time, typeof(float));
 		

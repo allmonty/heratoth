@@ -16,13 +16,22 @@ public class Action_TriggerGameOver : Action
 
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-		TelemetryNode deathNode = new TelemetryNode(
-			TelemetryNodeType.Agent,
+		TelemetryNode enemySpotPlayer = new TelemetryNode(
+			TelemetryNodeType.ChainEvent,
+			"Enemy spotted player",
+			controller.transform.position
+		);
+
+		int eventId = TelemetryCore.addNode(enemySpotPlayer);
+
+		TelemetryNode playerSpotted = new TelemetryNode(
+			TelemetryNodeType.ChainEvent,
 			"Player Spotted",
 			player.transform.position
 		);
 
-		TelemetryCore.addNode(deathNode);
+		playerSpotted.setLink(eventId);
+		TelemetryCore.addNode(playerSpotted);
 
 		GameManager.instance.gameOver();
 	}

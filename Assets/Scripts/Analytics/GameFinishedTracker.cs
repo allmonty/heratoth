@@ -24,7 +24,7 @@ public class GameFinishedTracker : MonoBehaviour {
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 
 		TelemetryNode relicInteraction = new TelemetryNode(
-			TelemetryNodeType.Activity,
+			TelemetryNodeType.SingleEvent,
 			"Relic Found",
 			player.transform.position
 		);
