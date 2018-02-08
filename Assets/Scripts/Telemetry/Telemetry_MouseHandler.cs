@@ -24,7 +24,9 @@ public class Telemetry_MouseHandler : MonoBehaviour {
       }
       if(hit.transform.tag.Equals(tagName)) {
         currentTooltipHandler = hit.transform.GetComponent<Telemetry_TooltipHandler>();
-        currentTooltipHandler.open();
+        Camera camera = Camera.current;
+        if(camera != null)
+          currentTooltipHandler.open(camera);
       }
     }
   }

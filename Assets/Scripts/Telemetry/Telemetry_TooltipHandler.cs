@@ -6,7 +6,8 @@ public class Telemetry_TooltipHandler : MonoBehaviour {
 
 	[SerializeField] GameObject tooltip = null;
 
-	public void open() {
+	public void open(Camera camera) {
+		tooltip.transform.LookAt(camera.transform.position, camera.transform.up);
 		tooltip.SetActive(true);
 	}
 
