@@ -9,6 +9,7 @@ public class TelemetryManager : MonoBehaviour {
 
 	static public TelemetryManager instance = null;
 
+	public bool isSavingActivated = false;
 	public List<string> playableScenes = new List<string>();
 
 	bool isRoundRunning = false;
@@ -57,6 +58,8 @@ public class TelemetryManager : MonoBehaviour {
 
 		TelemetryCore.setPlayerInfo("Session Duration", Time.realtimeSinceStartup);
 
-		// DBHandler.saveSessionsData(JsonConvert.SerializeObject(TelemetryCore.getPlayerInfo()));
+		if(isSavingActivated) {
+			DBHandler.saveSessionsData(JsonConvert.SerializeObject(TelemetryCore.getPlayerInfo()));
+		}
 	}
 }

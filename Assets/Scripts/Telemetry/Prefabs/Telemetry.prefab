@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4823171842453952}
   - component: {fileID: 114619638499713124}
   - component: {fileID: 114532883703993802}
+  - component: {fileID: 114633695647822436}
   m_Layer: 0
   m_Name: Telemetry
   m_TagString: TelemetryNode
@@ -28,35 +29,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1891183359335600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4028423572112226}
-  - component: {fileID: 114037330124006218}
-  m_Layer: 0
-  m_Name: Visualizer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4028423572112226
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1891183359335600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4823171842453952}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4823171842453952
 Transform:
   m_ObjectHideFlags: 1
@@ -66,33 +38,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4028423572112226}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114037330124006218
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1891183359335600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b385e37b0194bb1ae03dcfc356a104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: 
-  loadSceneName: 1
-  fetchInfo: 0
-  atomicModel: {fileID: 1319933964516322, guid: 959388f2fa3094a4aadc21673355ba26,
-    type: 2}
-  singleEventModel: {fileID: 1319933964516322, guid: 8c17a0ea2f96640f28f6e2d00b7cd8a7,
-    type: 2}
-  chainEventModel: {fileID: 1319933964516322, guid: 97539cebf794243d0a70b78c41a407d2,
-    type: 2}
-  roundsCount: 0
-  selectedRound: 12
 --- !u!114 &114532883703993802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,3 +67,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playableScenes:
   - Game
+--- !u!114 &114633695647822436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1466562520766908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b385e37b0194bb1ae03dcfc356a104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  loadSceneName: 1
+  fetchInfo: 0
+  atomicModel: {fileID: 1319933964516322, guid: 959388f2fa3094a4aadc21673355ba26,
+    type: 2}
+  singleEventModel: {fileID: 1319933964516322, guid: 8c17a0ea2f96640f28f6e2d00b7cd8a7,
+    type: 2}
+  chainEventModel: {fileID: 1319933964516322, guid: 97539cebf794243d0a70b78c41a407d2,
+    type: 2}
+  roundsCount: 0
+  selectedRound: 12
