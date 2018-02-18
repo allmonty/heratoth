@@ -19,12 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4823171842453952}
-  - component: {fileID: 114975958947394444}
   - component: {fileID: 114619638499713124}
+  - component: {fileID: 114532883703993802}
   m_Layer: 0
   m_Name: Telemetry
   m_TagString: TelemetryNode
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1466562520766908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7487617, y: -3.6909122, z: -176.70659}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4028423572112226}
@@ -92,7 +92,19 @@ MonoBehaviour:
   chainEventModel: {fileID: 1319933964516322, guid: 97539cebf794243d0a70b78c41a407d2,
     type: 2}
   roundsCount: 0
-  selectedRound: 13
+  selectedRound: 12
+--- !u!114 &114532883703993802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1466562520766908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6625aaa56a5445728e08b113246ef6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: TelemetryNode
 --- !u!114 &114619638499713124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,15 +118,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playableScenes:
   - Game
---- !u!114 &114975958947394444
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1466562520766908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a40807c196927ad459224ea449af6614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runDrawer: 0

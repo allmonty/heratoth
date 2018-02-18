@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4862288}
   - component: {fileID: 4862290}
   - component: {fileID: 4862289}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 43408707}
   - component: {fileID: 43408709}
   - component: {fileID: 43408708}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: diamante dourado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 71465068}
   - component: {fileID: 71465067}
   - component: {fileID: 71465069}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WallEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 104808918}
   - component: {fileID: 104808920}
   - component: {fileID: 104808919}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pote.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 119290775}
   - component: {fileID: 119290774}
   - component: {fileID: 119290776}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 121832713}
   - component: {fileID: 121832712}
   - component: {fileID: 121832714}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1070,7 @@ GameObject:
   - component: {fileID: 167341453}
   - component: {fileID: 167341452}
   - component: {fileID: 167341454}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1220,7 +1220,7 @@ GameObject:
   - component: {fileID: 178899413}
   - component: {fileID: 178899415}
   - component: {fileID: 178899414}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joia dourada (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1326,7 +1326,7 @@ GameObject:
   - component: {fileID: 191996586}
   - component: {fileID: 191996585}
   - component: {fileID: 191996587}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1558,6 +1558,10 @@ Prefab:
       propertyPath: m_Name
       value: BigStatue
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dfcfebea57c96445d886a42ad2daedc6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfcfebea57c96445d886a42ad2daedc6, type: 3}
   m_IsPrefabParent: 0
@@ -1570,7 +1574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 215547478}
   - component: {fileID: 215547479}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RelicContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1681,7 +1685,7 @@ GameObject:
   - component: {fileID: 222381340}
   - component: {fileID: 222381339}
   - component: {fileID: 222381341}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1767,7 +1771,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1802116256}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1785,7 +1789,7 @@ GameObject:
   - component: {fileID: 233851678}
   - component: {fileID: 233851677}
   - component: {fileID: 233851679}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2016,7 +2020,7 @@ GameObject:
   - component: {fileID: 295893940}
   - component: {fileID: 295893939}
   - component: {fileID: 295893941}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2326,7 +2330,7 @@ GameObject:
   - component: {fileID: 332161921}
   - component: {fileID: 332161920}
   - component: {fileID: 332161922}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2415,7 +2419,7 @@ GameObject:
   - component: {fileID: 335932925}
   - component: {fileID: 335932924}
   - component: {fileID: 335932926}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2508,7 +2512,7 @@ GameObject:
   - component: {fileID: 343436268}
   - component: {fileID: 343436270}
   - component: {fileID: 343436269}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cruz egipcia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2620,7 +2624,7 @@ GameObject:
   - component: {fileID: 346195329}
   - component: {fileID: 346195328}
   - component: {fileID: 346195330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2804,7 +2808,7 @@ GameObject:
   - component: {fileID: 365941509}
   - component: {fileID: 365941508}
   - component: {fileID: 365941510}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: besouro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2892,23 +2896,6 @@ MeshCollider:
 Transform:
   m_PrefabParentObject: {fileID: 400082, guid: 985e8dbb237a1104f90da71dbb0099ec, type: 3}
   m_PrefabInternal: {fileID: 1946734612}
---- !u!1 &389921938 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1466562520766908, guid: 1d7a3474224f2437d9a58bd5b2263331,
-    type: 2}
-  m_PrefabInternal: {fileID: 1136138319}
---- !u!114 &389921939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 389921938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6625aaa56a5445728e08b113246ef6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagName: TelemetryNode
 --- !u!1 &392124146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,7 +2905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392124147}
   - component: {fileID: 392124148}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2985,7 +2972,7 @@ GameObject:
   - component: {fileID: 399982449}
   - component: {fileID: 399982448}
   - component: {fileID: 399982450}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WallEntrance.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3105,7 +3092,7 @@ GameObject:
   - component: {fileID: 400378083}
   - component: {fileID: 400378082}
   - component: {fileID: 400378084}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3251,7 +3238,7 @@ GameObject:
   - component: {fileID: 436104859}
   - component: {fileID: 436104858}
   - component: {fileID: 436104860}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WallEntrance.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3343,7 +3330,7 @@ GameObject:
   - component: {fileID: 462278680}
   - component: {fileID: 462278679}
   - component: {fileID: 462278681}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3542,7 +3529,7 @@ GameObject:
   - component: {fileID: 482724559}
   - component: {fileID: 482724558}
   - component: {fileID: 482724560}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3661,7 +3648,7 @@ GameObject:
   - component: {fileID: 501135059}
   - component: {fileID: 501135058}
   - component: {fileID: 501135060}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3797,7 +3784,7 @@ GameObject:
   - component: {fileID: 542938076}
   - component: {fileID: 542938075}
   - component: {fileID: 542938077}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3886,7 +3873,7 @@ GameObject:
   - component: {fileID: 546034397}
   - component: {fileID: 546034396}
   - component: {fileID: 546034398}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4418,7 +4405,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 621016750}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4449,7 +4436,7 @@ GameObject:
   - component: {fileID: 624933637}
   - component: {fileID: 624933636}
   - component: {fileID: 624933638}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4704,7 +4691,7 @@ GameObject:
   - component: {fileID: 641628454}
   - component: {fileID: 641628453}
   - component: {fileID: 641628455}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4793,7 +4780,7 @@ GameObject:
   - component: {fileID: 660780896}
   - component: {fileID: 660780895}
   - component: {fileID: 660780897}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4909,7 +4896,7 @@ GameObject:
   - component: {fileID: 679429050}
   - component: {fileID: 679429052}
   - component: {fileID: 679429051}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pergaminho.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4982,7 +4969,7 @@ GameObject:
   - component: {fileID: 687258302}
   - component: {fileID: 687258304}
   - component: {fileID: 687258303}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pergaminho.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5177,7 +5164,7 @@ GameObject:
   - component: {fileID: 694882942}
   - component: {fileID: 694882944}
   - component: {fileID: 694882943}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: olho de horus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5256,7 +5243,7 @@ GameObject:
   - component: {fileID: 702595025}
   - component: {fileID: 702595024}
   - component: {fileID: 702595026}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5345,7 +5332,7 @@ GameObject:
   - component: {fileID: 709073782}
   - component: {fileID: 709073781}
   - component: {fileID: 709073783}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5520,7 +5507,7 @@ GameObject:
   - component: {fileID: 763375685}
   - component: {fileID: 763375687}
   - component: {fileID: 763375686}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5819,7 +5806,7 @@ GameObject:
   - component: {fileID: 790210290}
   - component: {fileID: 790210289}
   - component: {fileID: 790210291}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5984,7 +5971,7 @@ GameObject:
   - component: {fileID: 820974483}
   - component: {fileID: 820974485}
   - component: {fileID: 820974484}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pote.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6058,7 +6045,7 @@ GameObject:
   - component: {fileID: 823760002}
   - component: {fileID: 823760001}
   - component: {fileID: 823760003}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2_Broken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6185,7 +6172,7 @@ GameObject:
   - component: {fileID: 855724153}
   - component: {fileID: 855724152}
   - component: {fileID: 855724151}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase.001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6321,7 +6308,7 @@ GameObject:
   - component: {fileID: 874233465}
   - component: {fileID: 874233464}
   - component: {fileID: 874233466}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6409,7 +6396,7 @@ GameObject:
   - component: {fileID: 886400704}
   - component: {fileID: 886400706}
   - component: {fileID: 886400705}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joia vermelha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6483,7 +6470,7 @@ GameObject:
   - component: {fileID: 900517746}
   - component: {fileID: 900517745}
   - component: {fileID: 900517744}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6622,6 +6609,18 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.36076802
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: f114b3f72f883904d865b26664eca042, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f114b3f72f883904d865b26664eca042, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f114b3f72f883904d865b26664eca042, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f114b3f72f883904d865b26664eca042, type: 3}
   m_IsPrefabParent: 0
@@ -6636,7 +6635,7 @@ GameObject:
   - component: {fileID: 933062003}
   - component: {fileID: 933062002}
   - component: {fileID: 933062004}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6744,7 +6743,7 @@ GameObject:
   - component: {fileID: 964908368}
   - component: {fileID: 964908367}
   - component: {fileID: 964908369}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6833,7 +6832,7 @@ GameObject:
   - component: {fileID: 969287355}
   - component: {fileID: 969287354}
   - component: {fileID: 969287356}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7623,7 +7622,7 @@ GameObject:
   - component: {fileID: 1058721194}
   - component: {fileID: 1058721193}
   - component: {fileID: 1058721195}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7712,7 +7711,7 @@ GameObject:
   - component: {fileID: 1062723859}
   - component: {fileID: 1062723858}
   - component: {fileID: 1062723860}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7806,7 +7805,7 @@ GameObject:
   - component: {fileID: 1102378753}
   - component: {fileID: 1102378752}
   - component: {fileID: 1102378754}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7928,7 +7927,7 @@ GameObject:
   - component: {fileID: 1119864166}
   - component: {fileID: 1119864165}
   - component: {fileID: 1119864167}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bancada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8108,15 +8107,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4823171842453952, guid: 1d7a3474224f2437d9a58bd5b2263331, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.7487617
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4823171842453952, guid: 1d7a3474224f2437d9a58bd5b2263331, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.6909122
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4823171842453952, guid: 1d7a3474224f2437d9a58bd5b2263331, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -176.70659
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4823171842453952, guid: 1d7a3474224f2437d9a58bd5b2263331, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8138,11 +8137,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 114037330124006218, guid: 1d7a3474224f2437d9a58bd5b2263331,
-        type: 2}
-      propertyPath: selectedRound
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d7a3474224f2437d9a58bd5b2263331, type: 2}
   m_IsPrefabParent: 0
@@ -8156,7 +8150,7 @@ GameObject:
   - component: {fileID: 1162079400}
   - component: {fileID: 1162079402}
   - component: {fileID: 1162079401}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pote.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8262,7 +8256,7 @@ GameObject:
   - component: {fileID: 1167371612}
   - component: {fileID: 1167371611}
   - component: {fileID: 1167371613}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8908,6 +8902,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 82
       objectReference: {fileID: 0}
+    - target: {fileID: 1442357840230194, guid: 503ffb671e9ba5f409f0ce81498e69e6, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749718078411054, guid: 503ffb671e9ba5f409f0ce81498e69e6, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391088815388982, guid: 503ffb671e9ba5f409f0ce81498e69e6, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567250808509422, guid: 503ffb671e9ba5f409f0ce81498e69e6, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724991060922572, guid: 503ffb671e9ba5f409f0ce81498e69e6, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 503ffb671e9ba5f409f0ce81498e69e6, type: 2}
   m_IsPrefabParent: 0
@@ -9006,7 +9020,7 @@ GameObject:
   - component: {fileID: 1226679599}
   - component: {fileID: 1226679598}
   - component: {fileID: 1226679600}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9100,7 +9114,7 @@ GameObject:
   - component: {fileID: 1297369699}
   - component: {fileID: 1297369698}
   - component: {fileID: 1297369700}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9188,7 +9202,7 @@ GameObject:
   - component: {fileID: 1300809868}
   - component: {fileID: 1300809870}
   - component: {fileID: 1300809869}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9341,7 +9355,7 @@ GameObject:
   - component: {fileID: 1317320725}
   - component: {fileID: 1317320727}
   - component: {fileID: 1317320726}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pote.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9487,7 +9501,7 @@ GameObject:
   - component: {fileID: 1342713003}
   - component: {fileID: 1342713002}
   - component: {fileID: 1342713004}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9576,7 +9590,7 @@ GameObject:
   - component: {fileID: 1346886347}
   - component: {fileID: 1346886346}
   - component: {fileID: 1346886348}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9774,7 +9788,7 @@ GameObject:
   - component: {fileID: 1394908614}
   - component: {fileID: 1394908613}
   - component: {fileID: 1394908615}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WallEntrance.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10387,7 +10401,7 @@ GameObject:
   - component: {fileID: 1481767759}
   - component: {fileID: 1481767761}
   - component: {fileID: 1481767760}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pergaminho.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10480,7 +10494,7 @@ GameObject:
   - component: {fileID: 1513538360}
   - component: {fileID: 1513538359}
   - component: {fileID: 1513538361}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2_Broken2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10712,7 +10726,7 @@ GameObject:
   - component: {fileID: 1565932152}
   - component: {fileID: 1565932151}
   - component: {fileID: 1565932153}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10801,7 +10815,7 @@ GameObject:
   - component: {fileID: 1568492268}
   - component: {fileID: 1568492267}
   - component: {fileID: 1568492269}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11212,7 +11226,7 @@ GameObject:
   - component: {fileID: 1639530170}
   - component: {fileID: 1639530169}
   - component: {fileID: 1639530171}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11301,7 +11315,7 @@ GameObject:
   - component: {fileID: 1643717206}
   - component: {fileID: 1643717205}
   - component: {fileID: 1643717207}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase3.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11488,7 +11502,7 @@ GameObject:
   - component: {fileID: 1655245214}
   - component: {fileID: 1655245213}
   - component: {fileID: 1655245215}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11628,7 +11642,7 @@ GameObject:
   - component: {fileID: 1669951713}
   - component: {fileID: 1669951715}
   - component: {fileID: 1669951714}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: joia dourada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11872,7 +11886,7 @@ GameObject:
   - component: {fileID: 1777198031}
   - component: {fileID: 1777198033}
   - component: {fileID: 1777198032}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pote.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12141,6 +12155,10 @@ Prefab:
     - target: {fileID: 400000, guid: 65031393afd5f440cb6458ac18877428, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.39633504
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 65031393afd5f440cb6458ac18877428, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65031393afd5f440cb6458ac18877428, type: 3}
@@ -12496,6 +12514,10 @@ Prefab:
       propertyPath: m_Name
       value: SmallStatue
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dfcfebea57c96445d886a42ad2daedc6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfcfebea57c96445d886a42ad2daedc6, type: 3}
   m_IsPrefabParent: 0
@@ -12510,7 +12532,7 @@ GameObject:
   - component: {fileID: 1834480645}
   - component: {fileID: 1834480644}
   - component: {fileID: 1834480646}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12852,7 +12874,7 @@ GameObject:
   - component: {fileID: 1879477517}
   - component: {fileID: 1879477516}
   - component: {fileID: 1879477518}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pillar2.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12979,7 +13001,7 @@ GameObject:
   - component: {fileID: 1902436577}
   - component: {fileID: 1902436576}
   - component: {fileID: 1902436578}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13153,7 +13175,7 @@ GameObject:
   - component: {fileID: 1937713066}
   - component: {fileID: 1937713065}
   - component: {fileID: 1937713067}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13289,7 +13311,7 @@ GameObject:
   - component: {fileID: 1947952201}
   - component: {fileID: 1947952200}
   - component: {fileID: 1947952202}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase2.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13450,6 +13472,22 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e0da282113b5648e583d2d07d79af8ec, type: 2}
+    - target: {fileID: 1639319495846814, guid: 5619e1bfdaa8f486e9bb2fde0d049e2c, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070098626683184, guid: 5619e1bfdaa8f486e9bb2fde0d049e2c, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821031739341886, guid: 5619e1bfdaa8f486e9bb2fde0d049e2c, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554445441860382, guid: 5619e1bfdaa8f486e9bb2fde0d049e2c, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114389918349947556, guid: 5619e1bfdaa8f486e9bb2fde0d049e2c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5619e1bfdaa8f486e9bb2fde0d049e2c, type: 2}
@@ -13564,7 +13602,7 @@ GameObject:
   - component: {fileID: 1992492009}
   - component: {fileID: 1992492008}
   - component: {fileID: 1992492010}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14209,7 +14247,7 @@ GameObject:
   - component: {fileID: 2075418109}
   - component: {fileID: 2075418111}
   - component: {fileID: 2075418110}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SphynxRight.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14282,7 +14320,7 @@ GameObject:
   - component: {fileID: 2078008373}
   - component: {fileID: 2078008375}
   - component: {fileID: 2078008374}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pergaminho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14364,7 +14402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2095480264}
   - component: {fileID: 2095480265}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14502,7 +14540,7 @@ GameObject:
   - component: {fileID: 2118374781}
   - component: {fileID: 2118374780}
   - component: {fileID: 2118374782}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Vase.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14681,7 +14719,7 @@ GameObject:
   - component: {fileID: 2133881978}
   - component: {fileID: 2133881977}
   - component: {fileID: 2133881979}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cobra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
