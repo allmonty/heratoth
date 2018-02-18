@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TelemetryManager : MonoBehaviour {
-
 	static public TelemetryManager instance = null;
 
 	public bool isSavingActivated = false;
@@ -14,45 +13,37 @@ public class TelemetryManager : MonoBehaviour {
 
 	bool isRoundRunning = false;
 
-	void Awake() {
-		if(instance == null) {
-			instance = this;
-			DontDestroyOnLoad(this);
-		} else {
-			Destroy(this);
-		}
-	}
+	void Awake() { prepareSingleton(); }
 
 	void OnEnable()	{
-		Debug.Log("Enabled");
 		SceneManager.sceneLoaded += OnSceneLoaded;
 		SceneManager.sceneUnloaded += OnSceneUnloaded;
 	}
 
+	void OnDisable() {
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+		SceneManager.sceneUnloaded -= OnSceneUnloaded;
+	}
+
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)	{
 		if(playableScenes.Contains(scene.name)) {
+			//Debug.Log("Telemetry: Starting new Round for scene: " + scene.name);
 			this.isRoundRunning = true;
-			Debug.Log("Loaded " + scene.name);
 			TelemetryCore.newRound(scene.name);
 		}
 	}
 
 	void OnSceneUnloaded(Scene scene)	{
 		if(playableScenes.Contains(scene.name)) {
+			//Debug.Log("Telemetry: Ending new Round for scene: " + scene.name);
 			this.isRoundRunning = false;
-			Debug.Log("Unloaded " + scene.name);
 			TelemetryCore.endRound();
 		}
 	}
 
-	void OnDisable()	{
-		Debug.Log("Disabled");
-		SceneManager.sceneLoaded -= OnSceneLoaded;
-		SceneManager.sceneUnloaded -= OnSceneUnloaded;
-	}
-
 	void OnApplicationQuit() {
 		if(this.isRoundRunning) {
+			// If round didn't finish yet, ends it
 			TelemetryCore.endRound();
 		}
 
@@ -61,5 +52,15 @@ public class TelemetryManager : MonoBehaviour {
 		if(isSavingActivated) {
 			DBHandler.saveSessionsData(JsonConvert.SerializeObject(TelemetryCore.getPlayerInfo()));
 		}
+	}
+
+	void prepareSingleton() {
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else {
+            Destroy(this);
+        }
 	}
 }
