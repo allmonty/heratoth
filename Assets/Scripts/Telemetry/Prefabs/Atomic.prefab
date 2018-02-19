@@ -37,9 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4915563162741838}
   - component: {fileID: 120925082283941038}
-  - component: {fileID: 114727118952284624}
   - component: {fileID: 65169180778268484}
-  - component: {fileID: 114927040463075008}
+  - component: {fileID: 114727118952284624}
   m_Layer: 0
   m_Name: Atomic
   m_TagString: TelemetryNode
@@ -230,7 +229,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 75
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 75
     m_Alignment: 4
@@ -273,18 +272,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 1753108660688676}
---- !u!114 &114927040463075008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1319933964516322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8a5f1b9f48434aa3bb86fe21501b376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltip: {fileID: 0}
 --- !u!114 &114992122316519476
 MonoBehaviour:
   m_ObjectHideFlags: 1

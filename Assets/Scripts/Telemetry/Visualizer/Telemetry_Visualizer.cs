@@ -88,6 +88,9 @@ public class Telemetry_Visualizer : MonoBehaviour {
 			GameObject instantiatedNode = instantiateNode(nodeType, position);
 			instantiatedNode.transform.SetParent(nodesBag.transform);
 
+			Telemetry_TooltipHandler tooltip = instantiatedNode.GetComponent<Telemetry_TooltipHandler>();
+			tooltip.setInfo(node);
+
 			int linkId = node["Link"].Value<int>();
 			if(linkId != -1) {
 				//Renders link line between two nodes

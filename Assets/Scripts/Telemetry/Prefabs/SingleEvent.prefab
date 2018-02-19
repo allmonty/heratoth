@@ -37,8 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4915563162741838}
   - component: {fileID: 120437770537445752}
-  - component: {fileID: 114887120250337950}
   - component: {fileID: 135512350576678748}
+  - component: {fileID: 114887120250337950}
   m_Layer: 0
   m_Name: SingleEvent
   m_TagString: TelemetryNode
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 75
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 75
     m_Alignment: 4
