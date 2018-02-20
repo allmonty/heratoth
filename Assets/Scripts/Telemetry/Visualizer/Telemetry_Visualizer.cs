@@ -88,7 +88,7 @@ public class Telemetry_Visualizer : MonoBehaviour {
 			GameObject instantiatedNode = instantiateNode(nodeType, position);
 			instantiatedNode.transform.SetParent(nodesBag.transform);
 
-			Telemetry_TooltipHandler tooltip = instantiatedNode.GetComponent<Telemetry_TooltipHandler>();
+			Telemetry_NodeInfoHolder tooltip = instantiatedNode.GetComponent<Telemetry_NodeInfoHolder>();
 			tooltip.setInfo(node);
 
 			int linkId = node["Link"].Value<int>();
