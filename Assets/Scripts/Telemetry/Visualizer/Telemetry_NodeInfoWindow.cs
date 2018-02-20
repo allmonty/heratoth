@@ -6,10 +6,13 @@ using UnityEngine;
 
 public class Telemetry_NodeInfoWindow : MonoBehaviour {
 
-	[TextArea(5, 50)]
-	public string infoText = "";
+	JToken nodeInfo = null;
 
 	public void setInfo(JToken info) {
-		infoText = info.ToString();
+		nodeInfo = info;
+	}
+
+	public JToken getInfo() {
+		return nodeInfo;
 	}
 }
