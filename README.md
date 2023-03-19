@@ -1,4 +1,4 @@
-# Broken Shield
+# Heratoth (Broken Shield) Game
 
 Project made in Unity 5.6.1f1
 
